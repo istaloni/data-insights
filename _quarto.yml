@@ -3,8 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "data-insights"
+  title: "Steady Learning, SteadyGrit"
   navbar:
+    logo: images/1-100.JPG
+    background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
