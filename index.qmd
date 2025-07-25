@@ -1,5 +1,5 @@
 ---
-title: "data-insights"
+title: "Steady Learning, SteadyGrit"
 ---
 
 This is a Quarto website.
