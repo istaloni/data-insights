@@ -4,7 +4,7 @@ title: "Steady Learning, SteadyGrit"
 
 Karl Marquez
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+change
 
 ```{r}
 1 + 1
