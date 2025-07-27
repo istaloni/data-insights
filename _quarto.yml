@@ -5,19 +5,18 @@ project:
 website:
   title: "Steady Learning, SteadyGrit"
   navbar:
-    logo: images/1-100.JPG
+    logo: images/4-100.JPG
     background: primary
     search: true
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    right:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: slate
     css: styles.css
     toc: true
 
