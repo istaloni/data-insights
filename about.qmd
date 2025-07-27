@@ -1,9 +1,17 @@
 ---
-title: "About"
+title: "Karl Marquez"
+about:
+  template: jolla
+  image: nadine.JPG
 ---
 
-this is a trial
+Karl Marquez
 
-```{r}
-1 + 1
-```
+## Education
+
+UCSD
+
+## Experience
+
+Poseida Therapeutics
+

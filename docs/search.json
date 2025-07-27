@@ -9,8 +9,22 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Karl Marquez",
     "section": "",
-    "text": "this is a trial\n\n1 + 1\n\n[1] 2"
+    "text": "Karl Marquez"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Karl Marquez",
+    "section": "Education",
+    "text": "Education\nUCSD"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Karl Marquez",
+    "section": "Experience",
+    "text": "Experience\nPoseida Therapeutics"
   }
 ]
