@@ -2,7 +2,7 @@
 title: "Karl Marquez"
 about:
   template: jolla
-  image: nadine.JPG
+  image: images/nadine.JPG
 ---
 
 Karl Marquez
