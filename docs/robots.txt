@@ -1,1 +1,0 @@
-Sitemap: https://istaloni.github.io/data-insights/sitemap.xml
