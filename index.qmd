@@ -1,5 +1,7 @@
 ---
 title: "Steady Learning, SteadyGrit"
+subtitle: "This is a subtitle"
+image: karlgolf.jpg
 ---
 
 Karl Marquez
