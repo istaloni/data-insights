@@ -5,7 +5,7 @@ project:
 website:
   title: "Steady Learning, SteadyGrit"
   navbar:
-    logo: images/4-100.JPG
+    logo: images/karlgolf.JPG
     background: primary
     search: true
     right:
@@ -13,6 +13,8 @@ website:
         href: index.qmd
       - text: "About"
         href: about.qmd
+      - text: "Blog Post"
+        href: posts/MedicalCost.qmd
     page-footer: "Made in Quarto"
 
 format:
