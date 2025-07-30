@@ -2,7 +2,7 @@
 title: "Karl Marquez"
 about:
   template: jolla
-  image: images/nadine.JPG
+  image: images/profile.jfif
   links: 
     - icon: github
       text: Github
