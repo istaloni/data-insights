@@ -1,13 +1,12 @@
 ---
 title: "Steady Learning, SteadyGrit"
 subtitle: "This is a subtitle"
-image: images/karlgolf.JPG
+listing:
+  contents: Blog
+  sort: "date desc"
+  type: default
+  categories: true
+page-layout: full
+title-block-banner: true
 ---
 
-Karl Marquez
-
-change
-
-```{r}
-1 + 1
-```
