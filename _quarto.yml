@@ -13,8 +13,8 @@ website:
         href: index.qmd
       - text: "About"
         href: about.qmd
-      - text: "Blog Post"
-        href: posts/MedicalCost.qmd
+      - text: "Blog"
+        href: blogs.qmd
     page-footer: "Made in Quarto"
 
 format:
