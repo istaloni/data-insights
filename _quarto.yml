@@ -3,13 +3,13 @@ project:
   output-dir: docs
 
 website:
-  title: "Steady Learning, SteadyGrit"
+  title: "Residual Opinions"
   navbar:
-    logo: images/karlgolf.JPG
+    logo: images/nadine.jpg
     background: primary
     search: true
     right:
-      - text: "Home"
+      - text: "Posts"
         href: index.qmd
       - text: "About"
         href: about.qmd
@@ -21,6 +21,7 @@ format:
     theme: 
       light: flatly
       dark: darkly
+    respect-user-color-scheme: true
     css: styles.css
     toc: true
 
