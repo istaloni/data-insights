@@ -13,14 +13,14 @@ website:
         href: index.qmd
       - text: "About"
         href: about.qmd
-      - text: "Blog"
-        href: blogs.qmd
     page-footer: "Made in Quarto"
 
 format:
   html:
     linkcolor: "black"
-    theme: flatly
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
 

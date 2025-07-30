@@ -3,9 +3,11 @@ title: "Karl Marquez"
 about:
   template: jolla
   image: images/nadine.JPG
+  links: 
+    - icon: github
+      text: Github
+      href: "https://github.com/istaloni"
 ---
-
-Karl Marquez
 
 ## Education
 
