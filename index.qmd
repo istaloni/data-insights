@@ -1,6 +1,6 @@
 ---
-title: "Steady Learning, SteadyGrit"
-subtitle: "This is a subtitle"
+title: "Residual Opinions"
+subtitle: "Chasing correlations, dodging causations"
 listing:
   contents: Blog
   sort: "date desc"
