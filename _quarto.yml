@@ -6,7 +6,8 @@ website:
   title: "Residual Opinions"
   navbar:
     logo: images/nadine.jpg
-    background: primary
+    background: "#213555"
+    foreground: "#f5efe7"
     search: true
     right:
       - text: "Posts"
@@ -15,7 +16,8 @@ website:
         href: about.qmd
   page-footer:
     border: true
-    background: primary
+    background: "#213555"
+    foreground: "#f5efe7"
     left: "Copyright 2025, Karl Marquez"
     right: 
       - icon: github
