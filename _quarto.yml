@@ -15,7 +15,7 @@ website:
         href: about.qmd
   page-footer:
     border: true
-    background: light
+    background: primary
     left: "Copyright 2025, Karl Marquez"
     right: 
       - icon: github
