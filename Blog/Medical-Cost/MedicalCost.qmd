@@ -1,6 +1,11 @@
 ---
 title: "MedicalCostPrediction"
 author: "Karl Marquez"
+date: "7/29/2025"
+categories:
+  - medical
+  - code
+  - clinical
 output: 
   bookdown::html_document2:
     css: "style.css"

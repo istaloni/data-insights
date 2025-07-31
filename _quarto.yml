@@ -13,7 +13,16 @@ website:
         href: index.qmd
       - text: "About"
         href: about.qmd
-    page-footer: "Made in Quarto"
+  page-footer:
+    border: true
+    background: light
+    left: "Copyright 2025, Karl Marquez"
+    right: 
+      - icon: github
+        href: https://github.com/istaloni
+      - icon: linkedin
+        href: https://www.linkedin.com/in/karl4marquez/
+        
 
 format:
   html:
