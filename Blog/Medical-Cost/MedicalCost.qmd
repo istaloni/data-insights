@@ -4,6 +4,8 @@ description: "A statistical approach to predicting medical cost based on demogra
 author: "Karl Marquez"
 date: "7/29/2025"
 date-modified: "08/01/2025"
+image: thumbnail.JPG
+image-height: "2em"
 categories:
   - medical
   - code
