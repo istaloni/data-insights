@@ -1,11 +1,15 @@
 ---
-title: "MedicalCostPrediction"
+title: "Medical Cost Prediction"
+description: "A statistical approach to predicting medical cost based on demographics and health conditions" 
 author: "Karl Marquez"
 date: "7/29/2025"
+date-modified: "08/01/2025"
 categories:
   - medical
   - code
   - clinical
+
+
 output: 
   bookdown::html_document2:
     css: "style.css"
@@ -18,6 +22,7 @@ output:
     fig_width: 7
     fig_height: 5
     code_folding: hide
+
 ---
 
 ```{r setup, include=FALSE}
