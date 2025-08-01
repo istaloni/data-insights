@@ -3,6 +3,12 @@ project:
   output-dir: docs
 
 website:
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Alert** - this site and blog posts are under development - Karl M."
+    type: secondary
+    position: above-navbar
   title: "Residual Opinions"
   navbar:
     logo: images/nadine.jpg
@@ -24,6 +30,10 @@ website:
         href: https://github.com/istaloni
       - icon: linkedin
         href: https://www.linkedin.com/in/karl4marquez/
+  cookie-consent:
+    type: implied
+    style: simple
+    palette: light
         
 
 format:
