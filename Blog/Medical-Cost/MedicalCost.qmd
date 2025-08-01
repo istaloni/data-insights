@@ -5,25 +5,29 @@ author: "Karl Marquez"
 date: "7/29/2025"
 date-modified: "08/01/2025"
 image: thumbnail.JPG
-image-height: "2em"
 categories:
   - medical
   - code
   - clinical
 
-
-output: 
-  bookdown::html_document2:
-    css: "style.css"
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
     toc: true
-    toc_depth: 3
-    toc_float:
-      collapsed: true
-      smooth_scroll: true
-    number_sections: true
-    fig_width: 7
-    fig_height: 5
-    code_folding: hide
+    toc-depth: 3
+    toc-expand: true
+    toc-title: Contents
+    toc-location: right
+    number-sections: true
+    css: "style.css"
+    smooth-scroll: true
+    comments: 
+      hypothesis: 
+        theme: classic
+    
+  
 
 ---
 
