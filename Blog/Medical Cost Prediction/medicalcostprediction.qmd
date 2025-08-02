@@ -1,0 +1,30 @@
+---
+title: "Medical Cost Prediction"
+description: "A statistical approach to predicting medical cost based on demographics and health conditions" 
+author: "Karl Marquez"
+date: "08/02/2025"
+draft: true
+image: thumbnail.JPG
+categories:
+  - medical
+  - code
+  - clinical
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+    code-tools: true
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    toc-title: Contents
+    toc-location: right
+    number-sections: true
+    css: "style.css"
+    smooth-scroll: true
+    comments: 
+      hypothesis: 
+        theme: classic
+---
+

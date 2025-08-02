@@ -15,6 +15,7 @@ format:
     code-fold: true
     code-summary: "Show me the code"
     code-overflow: wrap
+    code-tools: true
     toc: true
     toc-depth: 3
     toc-expand: true
