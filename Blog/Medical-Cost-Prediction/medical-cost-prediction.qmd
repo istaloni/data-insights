@@ -1,0 +1,37 @@
+---
+title: "Medical Cost Prediction"
+description: "A machine learning approach to predict medical costs from demographic and health inputs"
+author: "Karl Marquez"
+date: 2025-08-01
+image: thumbnail.JPG
+categories:
+  - medical
+  - code
+  - clinical
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+---
+
+# Introduction
+
+The goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.
+
+Let us start with loading the dataset for this analysis.
+
+:::{.callout-note}
+Note that this data set curated for machine learning, not a realistic data set.
+:::
+
+
+
+
+
+
+
+
+
+
+
