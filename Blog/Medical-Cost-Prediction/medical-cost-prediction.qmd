@@ -16,6 +16,74 @@ format:
 ---
 
 # Introduction
+
 The goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.
 
 Let us start with loading the data set for this analysis.
+
+```{r include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(lubridate) #to automatically guess the format of the date column
+library(writexl)
+library(corrplot)
+library(Hmisc)
+library(randomForest)
+library(tidyverse)
+library(readxl)
+library(plotly)
+library(ggforce)
+library(ggstatsplot)
+library(forcats)
+library(ggpubr)
+library(rstatix)
+library(DataExplorer)
+library(dlookr)
+library(flextable)
+library(prettydoc)
+library(DT)
+library(networkD3)
+library(ggrepel)
+library(leaflet)
+library(maps)
+library(ggcorrplot)
+library(lares)
+library(lmtest)
+library(ggsignif)
+```
+
+```{r warning=FALSE}
+medicalcost <- read.csv("medical_cost.csv")
+medicalcost <- medicalcost %>% 
+  mutate(BMI.status = case_when(
+    bmi < 18.5 ~ "Underweight",
+    bmi >= 18.5 & bmi < 24.9 ~ "Normal",
+    bmi >= 25 & bmi < 29.9 ~ "Overweight",
+    bmi >= 30 ~ "Obese",
+    TRUE ~ "Unknown")) %>%
+  mutate(BMI.status = factor(BMI.status, ordered = TRUE,
+                             levels = c("Underweight", "Normal", "Overweight", "Obese", "Unknown"))) %>% 
+  mutate(children = factor(children, 
+                           ordered = TRUE,
+                           levels = c("0", "1", "2", "3", "4", "5"))) %>% 
+  mutate(sex = factor(sex, ordered = TRUE, levels = c("male", "female"))) %>% 
+  mutate(smoker = factor(smoker, ordered = TRUE, levels = c("no", "yes"))) %>% 
+  mutate(region = factor(region, ordered = TRUE, levels = c("northeast", "northwest", "southeast", "southwest")))
+
+```
+
+I added a variable to stratify the BMI into 4 different categories: Underweight, Normal, Overweight, and Obese. I also transformed the sex, bmi status, children, smoking status, region into categorical factors.
+
+```{r}
+
+ggplotly(ggplot(medicalcost, aes(x = charges)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  theme_minimal())
+
+ggplotly(ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
+  geom_point(alpha = 0.6) +
+  scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
+  theme_minimal())
+
+```

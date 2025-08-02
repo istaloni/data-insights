@@ -24,7 +24,6 @@ format:
     number-sections: true
     css: "style.css"
     smooth-scroll: true
-
 ---
 
 ```{r setup, include=FALSE}

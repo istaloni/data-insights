@@ -123,6 +123,6 @@
     "href": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html",
     "title": "Medical Cost Prediction",
     "section": "",
-    "text": "Sample"
+    "text": "Introduction\nThe goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.\nLet us start with loading the data set for this analysis."
   }
 ]
