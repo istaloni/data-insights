@@ -103,5 +103,12 @@
     "title": "Medical Cost Analysis",
     "section": "3.1 3D Plots",
     "text": "3.1 3D Plots\n\n\nShow me the code\nBMIstatus.naremoved &lt;- medicalcost %&gt;% \n  filter(BMI.status != \"Unknown\") %&gt;% \n  mutate(BMI.status = factor(BMI.status,\n                                levels = c(\"Underweight\", \"Normal\",\n                                           \"Overweight\", \"Obese\")))\n\nage.bmi.charge2 &lt;- plot_ly(\n  data = BMIstatus.naremoved, type = \"scatter3d\", mode = \"markers\",\n  x = ~age, y = ~bmi, z = ~charges, \n  color = ~smoker, colors = c(\"no\" = \"#1D24CA\", \"yes\" = \"#B31312\"),\n  symbol = ~BMI.status, symbols = c(\"Underweight\" = \"circle\",\n                                    \"Normal\" = \"square\",\n                                    \"Overweight\" = \"diamond\",\n                                    \"Obese\" = \"cross\"),\n  marker = list(opacity = 0.5), width = 900, height = 800) %&gt;% \n  layout(\n    title = list(\n      text = \"3D ScatterPlot of Age, BMI, and Charges\", \n      font = list(size = 20)),\n    scene = list(\n      xaxis = list(title = \"Age\", titlefont = list(size = 10)),\n      yaxis = list(title = \"BMI\", titlefont = list(size = 10)),\n      zaxis = list(title = \"Charges ($)\", titlefont = list(size = 10))),\n    legend = list(title = list(text = \"Smoker Status\", font = list(size = 10))),\n    margin = list(l = 10, r = 10, b = 10, t = 40), \n    autosize = TRUE)\nage.bmi.charge2\n\n\n\n\nDouble-positive for Smoker and Obese among the highest medically charged."
+  },
+  {
+    "objectID": "Blog/Medical Cost Prediction/medicalcostprediction.html",
+    "href": "Blog/Medical Cost Prediction/medicalcostprediction.html",
+    "title": "Medical Cost Prediction",
+    "section": "",
+    "text": "1 Introduction\nThe goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.\nLet us start with loading the dataset for this analysis."
   }
 ]
