@@ -8,6 +8,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/Blog/Medical Cost Prediction/medicalcostprediction.html",
       "/Blog/Medical-Cost/MedicalCost.html"
     ]
   }
