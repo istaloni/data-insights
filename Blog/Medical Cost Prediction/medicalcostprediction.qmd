@@ -26,5 +26,34 @@ format:
     comments: 
       hypothesis: 
         theme: classic
+execute: 
+  eval: true
+  echo: true
+  freeze: true
+  shiny: true
 ---
+
+# Introduction
+
+The goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.
+
+Let us start with loading the dataset for this analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
