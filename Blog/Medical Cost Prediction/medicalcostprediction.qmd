@@ -25,11 +25,6 @@ format:
     comments: 
       hypothesis: 
         theme: classic
-execute: 
-  eval: true
-  echo: true
-  freeze: true
-  shiny: true
 ---
 
 # Introduction
