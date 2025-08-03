@@ -84,6 +84,7 @@ ggplotly(ggplot(medicalcost, aes(x = charges)) +
 ggplotly(ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
   geom_point(alpha = 0.6) +
   scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
+    labs(title = "Smokers that have high BMI more likely to have increased medical cost") +
   theme_minimal())
 
 ```
