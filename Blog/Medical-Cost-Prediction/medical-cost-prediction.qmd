@@ -125,11 +125,12 @@ ggplot(data = medicalcost, aes(x = smoker, y = charges, fill = smoker)) +
   scale_fill_manual(values = c("yes" = "red", "no" = "steelblue")) +
   stat_compare_means(comparisons = smoking.comparison, 
                      aes(label = ..p.signif..), 
-                     label.y = 70000) +
+                     label.y = 70000, size = 6) +
   karl_theme +
   theme(legend.position = "none") +
-  scale_y_continuous(breaks = c(20000, 40000, 60000),
-                     labels = c("$20k", "$40k", "$60k"))
+  scale_y_continuous(limit = c(0, 80000),
+                     breaks = c(20000, 40000, 60000, 80000),
+                     labels = c("$20k", "$40k", "$60k", "$80k"))
 ```
 Unpaired T test suggests that smokers have higher cost of medical charges than non-smokers. How does these two groups affect the medical cost with a third variable, such as age and BMI? 
 
