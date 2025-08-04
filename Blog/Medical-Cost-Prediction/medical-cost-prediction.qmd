@@ -79,7 +79,7 @@ medicalcost <- medicalcost %>%
 
 I added a variable to stratify the BMI into 4 different categories: Underweight, Normal, Overweight, and Obese. I also transformed the sex, bmi status, children, smoking status, region into categorical factors. The resulting data frame is as follows:
 ```{r}
-#| renderings: [light, dark]
+
 medicalcostinfo <- medicalcost %>% 
   datatable(
     filter = list(position = "top", clear = FALSE),

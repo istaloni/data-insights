@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
-    .datatables {
+    #DataTables_Table_0_wrapper {
         color: white !important;
-        background-color: #1e1e1e !important;
+        background-color: #333 !important;
     }
 }
