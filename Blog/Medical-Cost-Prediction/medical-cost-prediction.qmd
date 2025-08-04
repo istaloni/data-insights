@@ -22,6 +22,8 @@ The goal of this notebook is to characterize the dataset and ultimately help pre
 Let us start with loading the necessary packages for this analysis.
 
 ```{r}
+#| warning: false
+
 packages <- c("shiny", "tidyverse", "lubridate", "randomForest", "plotly",
               "ggstatsplot", "corrplot", "Hmisc", "flextable", "DT", "networkD3",
               "ggrepel", "leaflet", "maps", "ggforce", "lmtest")
@@ -53,7 +55,7 @@ library(lmtest)
 ```
 
 # Data Upload and Clean-up
-```{r warning=FALSE}
+```{r}
 medicalcost <- read.csv("medical_cost.csv")
 medicalcost <- medicalcost %>% 
   mutate(BMI.status = case_when(
@@ -75,7 +77,7 @@ medicalcost <- medicalcost %>%
 
 I added a variable to stratify the BMI into 4 different categories: Underweight, Normal, Overweight, and Obese. I also transformed the sex, bmi status, children, smoking status, region into categorical factors. The resulting data frame is as follows:
 ```{r}
-
+#| renderings: [light, dark]
 medicalcostinfo <- medicalcost %>% 
   datatable(
     filter = list(position = "top", clear = FALSE),
