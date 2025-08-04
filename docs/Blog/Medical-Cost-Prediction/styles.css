@@ -1,6 +1,39 @@
 @media (prefers-color-scheme: dark) {
-    #DataTables_Table_0_wrapper {
-        color: white !important;
-        background-color: #333 !important;
-    }
+    div.dataTables_wrapper {
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+
+  table.dataTable {
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+
+  table.dataTable thead {
+    background-color: #2b2b2b !important;
+    color: white !important;
+  }
+
+  table.dataTable tbody {
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+
+  table.dataTable tr {
+    background-color: #1e1e1e !important;
+    color: white !important;
+  }
+
+  table.dataTable td,
+  table.dataTable th {
+    color: white !important;
+  }
+
+  .dataTables_filter input,
+  .dataTables_length select,
+  .dataTables_info,
+  .dataTables_paginate {
+    color: white !important;
+    background-color: #2b2b2b !important;
+  }
 }
