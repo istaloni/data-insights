@@ -13,6 +13,7 @@ format:
     code-fold: true
     code-summary: "Show me the code"
     code-overflow: wrap
+    css: styles.css
 execute: 
   warning: false
 ---
