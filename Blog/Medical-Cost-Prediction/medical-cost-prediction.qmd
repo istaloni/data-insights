@@ -28,7 +28,7 @@ Let us start with loading the necessary packages for this analysis.
 
 packages <- c("shiny", "tidyverse", "lubridate", "randomForest", "plotly",
               "ggstatsplot", "corrplot", "Hmisc", "flextable", "DT", "networkD3",
-              "ggrepel", "leaflet", "maps", "ggforce", "lmtest")
+              "ggrepel", "leaflet", "maps", "ggforce", "lmtest", "ggpubr")
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
@@ -52,6 +52,7 @@ library(leaflet)
 library(maps)
 library(ggforce)
 library(lmtest)
+library(ggpubr)
 
 
 ```
@@ -89,18 +90,40 @@ medicalcostinfo <- medicalcost %>%
         )
 medicalcostinfo
 ```
+# Exploratory Data Analysis
 
+## Distribution of medical charges in the data set
 ```{r}
 
-ggplotly(ggplot(medicalcost, aes(x = charges)) +
-  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
-  theme_minimal())
+ggplot(medicalcost, aes(x = charges)) +
+  geom_histogram(bins = 20, fill = "steelblue", color = "white") +
+    labs(title = "Medical charges skewed to the right") +
+  theme_minimal()
+```
 
-ggplotly(ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
-  geom_point(alpha = 0.6) +
+## Smokers have higher medical cost than non-smokers
+```{r}
+smoking.comparison <- list(c("yes", "no"))
+
+ggplot(data = medicalcost, aes(x = smoker, y = charges, fill = smoker)) +
+  geom_boxplot(alpha = 0.75) +
+  labs(title = "Smoking significantly increases medical charges") +
+  scale_fill_manual(values = c("yes" = "red", "no" = "steelblue")) +
+  stat_compare_means(comparisons = smoking.comparison, 
+                     aes(label = ..p.signif..), 
+                     label.y = 70000) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+
+## Relationship between BMI and medical cost
+```{r}
+ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
+  geom_point(alpha = 0.75, size = 2.5) +
   scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
-    labs(title = "Smokers that have high BMI more likely to have increased medical cost") +
-  theme_minimal())
+    labs(title = "High BMI smokers have increased medical cost") +
+  theme_minimal()
 
 ```
 
