@@ -19,40 +19,40 @@ format:
 
 The goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.
 
-Let us start with loading the data set for this analysis.
+Let us start with loading the necessary packages for this analysis.
 
-```{r include=FALSE}
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-library(lubridate) #to automatically guess the format of the date column
-library(writexl)
+```{r}
+packages <- c("shiny", "tidyverse", "lubridate", "randomForest", "plotly",
+              "ggstatsplot", "corrplot", "Hmisc", "flextable", "DT", "networkD3",
+              "ggrepel", "leaflet", "maps", "ggforce", "lmtest")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+invisible(lapply(packages, library, character.only = TRUE))
+
+
+library(shiny)
+library(tidyverse)
+library(lubridate) 
+library(randomForest)
+library(plotly)
+library(ggstatsplot)
 library(corrplot)
 library(Hmisc)
-library(randomForest)
-library(tidyverse)
-library(readxl)
-library(plotly)
-library(ggforce)
-library(ggstatsplot)
-library(forcats)
-library(ggpubr)
-library(rstatix)
-library(DataExplorer)
-library(dlookr)
 library(flextable)
-library(prettydoc)
 library(DT)
 library(networkD3)
 library(ggrepel)
 library(leaflet)
 library(maps)
-library(ggcorrplot)
-library(lares)
+library(ggforce)
 library(lmtest)
-library(ggsignif)
+
+
 ```
 
+# Data Upload and Clean-up
 ```{r warning=FALSE}
 medicalcost <- read.csv("medical_cost.csv")
 medicalcost <- medicalcost %>% 
@@ -73,7 +73,18 @@ medicalcost <- medicalcost %>%
 
 ```
 
-I added a variable to stratify the BMI into 4 different categories: Underweight, Normal, Overweight, and Obese. I also transformed the sex, bmi status, children, smoking status, region into categorical factors.
+I added a variable to stratify the BMI into 4 different categories: Underweight, Normal, Overweight, and Obese. I also transformed the sex, bmi status, children, smoking status, region into categorical factors. The resulting data frame is as follows:
+```{r}
+
+medicalcostinfo <- medicalcost %>% 
+  datatable(
+    filter = list(position = "top", clear = FALSE),
+    options = list(columnDefs = list(list(className = "dt_center", targets = "_all")),
+                   scrollX = TRUE),
+          caption = "Medical cost dataset"
+        )
+medicalcostinfo
+```
 
 ```{r}
 
@@ -87,4 +98,11 @@ ggplotly(ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
     labs(title = "Smokers that have high BMI more likely to have increased medical cost") +
   theme_minimal())
 
+```
+
+# Model using Multiple Linear Regression
+
+```{r}
+model <- lm(charges ~ age + bmi + smoker, data = medicalcost)
+summary(model)
 ```
