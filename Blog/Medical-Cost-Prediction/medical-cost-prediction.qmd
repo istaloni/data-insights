@@ -54,10 +54,18 @@ library(ggforce)
 library(lmtest)
 library(ggpubr)
 
+karl_theme <- theme_bw() +
+  theme(plot.title = element_text(size=20),
+        axis.title = element_text(size = 15),
+        axis.text = element_text(size = 12),
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=12))
+        
 
 ```
 
 # Data Upload and Clean-up
+
 ```{r}
 medicalcost <- read.csv("medical_cost.csv")
 medicalcost <- medicalcost %>% 
@@ -79,6 +87,7 @@ medicalcost <- medicalcost %>%
 ```
 
 I added a variable to stratify the BMI into 4 different categories: Underweight, Normal, Overweight, and Obese. I also transformed the sex, bmi status, children, smoking status, region into categorical factors. The resulting data frame is as follows:
+
 ```{r}
 
 medicalcostinfo <- medicalcost %>% 
@@ -90,40 +99,63 @@ medicalcostinfo <- medicalcost %>%
         )
 medicalcostinfo
 ```
+
 # Exploratory Data Analysis
 
 ## Distribution of medical charges in the data set
+
 ```{r}
 
 ggplot(medicalcost, aes(x = charges)) +
   geom_histogram(bins = 20, fill = "steelblue", color = "white") +
-    labs(title = "Medical charges skewed to the right") +
-  theme_minimal()
+  labs(title = "Medical charges skewed to the right") +
+  scale_x_continuous(breaks = c(20000, 40000, 60000),
+                     labels = c("$20k", "$40k", "$60k")) +
+  karl_theme
 ```
 
 ## Smokers have higher medical cost than non-smokers
+
 ```{r}
 smoking.comparison <- list(c("yes", "no"))
 
 ggplot(data = medicalcost, aes(x = smoker, y = charges, fill = smoker)) +
   geom_boxplot(alpha = 0.75) +
-  labs(title = "Smoking significantly increases medical charges") +
+  labs(title = "Smoking significantly\nincreases medical charges") +
   scale_fill_manual(values = c("yes" = "red", "no" = "steelblue")) +
   stat_compare_means(comparisons = smoking.comparison, 
                      aes(label = ..p.signif..), 
                      label.y = 70000) +
-  theme_minimal() +
-  theme(legend.position = "none")
+  karl_theme +
+  theme(legend.position = "none") +
+  scale_y_continuous(breaks = c(20000, 40000, 60000),
+                     labels = c("$20k", "$40k", "$60k"))
+```
+Unpaired T test suggests that smokers have higher cost of medical charges than non-smokers. How does these two groups affect the medical cost with a third variable, such as age and BMI? 
+
+
+## Relationship between age and medical cost
+```{r}
+ggplot(medicalcost, aes(x = age, y = charges, color = smoker)) +
+  geom_point(alpha = 0.75, size = 2.5) +
+  scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
+    labs(title = "Older smokers are associated\nwith higher medical charges") +
+  scale_y_continuous(breaks = c(20000, 40000, 60000),
+                     labels = c("$20k", "$40k", "$60k")) +
+  karl_theme
 ```
 
 
 ## Relationship between BMI and medical cost
+
 ```{r}
 ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
   geom_point(alpha = 0.75, size = 2.5) +
   scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
-    labs(title = "High BMI smokers have increased medical cost") +
-  theme_minimal()
+    labs(title = "High BMI smokers\nhave increased medical cost") +
+  scale_y_continuous(breaks = c(20000, 40000, 60000),
+                     labels = c("$20k", "$40k", "$60k")) +
+  karl_theme
 
 ```
 

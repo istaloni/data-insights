@@ -123,27 +123,34 @@
     "href": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html",
     "title": "Medical Cost Prediction",
     "section": "",
-    "text": "The goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.\nLet us start with loading the necessary packages for this analysis.\n\n\nShow me the code\npackages &lt;- c(\"shiny\", \"tidyverse\", \"lubridate\", \"randomForest\", \"plotly\",\n              \"ggstatsplot\", \"corrplot\", \"Hmisc\", \"flextable\", \"DT\", \"networkD3\",\n              \"ggrepel\", \"leaflet\", \"maps\", \"ggforce\", \"lmtest\", \"ggpubr\")\ninstalled_packages &lt;- packages %in% rownames(installed.packages())\nif (any(installed_packages == FALSE)) {\n  install.packages(packages[!installed_packages])\n}\ninvisible(lapply(packages, library, character.only = TRUE))\n\n\nlibrary(shiny)\nlibrary(tidyverse)\nlibrary(lubridate) \nlibrary(randomForest)\nlibrary(plotly)\nlibrary(ggstatsplot)\nlibrary(corrplot)\nlibrary(Hmisc)\nlibrary(flextable)\nlibrary(DT)\nlibrary(networkD3)\nlibrary(ggrepel)\nlibrary(leaflet)\nlibrary(maps)\nlibrary(ggforce)\nlibrary(lmtest)\nlibrary(ggpubr)"
+    "text": "The goal of this notebook is to characterize the dataset and ultimately help predict medical charges based on factors like age, sex, bmi, number of children, smoking status, and region of living.\nLet us start with loading the necessary packages for this analysis.\n\n\nShow me the code\npackages &lt;- c(\"shiny\", \"tidyverse\", \"lubridate\", \"randomForest\", \"plotly\",\n              \"ggstatsplot\", \"corrplot\", \"Hmisc\", \"flextable\", \"DT\", \"networkD3\",\n              \"ggrepel\", \"leaflet\", \"maps\", \"ggforce\", \"lmtest\", \"ggpubr\")\ninstalled_packages &lt;- packages %in% rownames(installed.packages())\nif (any(installed_packages == FALSE)) {\n  install.packages(packages[!installed_packages])\n}\ninvisible(lapply(packages, library, character.only = TRUE))\n\n\nlibrary(shiny)\nlibrary(tidyverse)\nlibrary(lubridate) \nlibrary(randomForest)\nlibrary(plotly)\nlibrary(ggstatsplot)\nlibrary(corrplot)\nlibrary(Hmisc)\nlibrary(flextable)\nlibrary(DT)\nlibrary(networkD3)\nlibrary(ggrepel)\nlibrary(leaflet)\nlibrary(maps)\nlibrary(ggforce)\nlibrary(lmtest)\nlibrary(ggpubr)\n\nkarl_theme &lt;- theme_bw() +\n  theme(plot.title = element_text(size=20),\n        axis.title = element_text(size = 15),\n        axis.text = element_text(size = 12),\n        legend.title = element_text(size=12),\n        legend.text = element_text(size=12))"
   },
   {
     "objectID": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#distribution-of-medical-charges-in-the-data-set",
     "href": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#distribution-of-medical-charges-in-the-data-set",
     "title": "Medical Cost Prediction",
     "section": "Distribution of medical charges in the data set",
-    "text": "Distribution of medical charges in the data set\n\n\nShow me the code\nggplot(medicalcost, aes(x = charges)) +\n  geom_histogram(bins = 20, fill = \"steelblue\", color = \"white\") +\n    labs(title = \"Medical charges skewed to the right\") +\n  theme_minimal()"
+    "text": "Distribution of medical charges in the data set\n\n\nShow me the code\nggplot(medicalcost, aes(x = charges)) +\n  geom_histogram(bins = 20, fill = \"steelblue\", color = \"white\") +\n  labs(title = \"Medical charges skewed to the right\") +\n  scale_x_continuous(breaks = c(20000, 40000, 60000),\n                     labels = c(\"$20k\", \"$40k\", \"$60k\")) +\n  karl_theme"
   },
   {
     "objectID": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#smokers-have-higher-medical-cost-than-non-smokers",
     "href": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#smokers-have-higher-medical-cost-than-non-smokers",
     "title": "Medical Cost Prediction",
     "section": "Smokers have higher medical cost than non-smokers",
-    "text": "Smokers have higher medical cost than non-smokers\n\n\nShow me the code\nsmoking.comparison &lt;- list(c(\"yes\", \"no\"))\n\nggplot(data = medicalcost, aes(x = smoker, y = charges, fill = smoker)) +\n  geom_boxplot(alpha = 0.75) +\n  labs(title = \"Smoking significantly increases medical charges\") +\n  scale_fill_manual(values = c(\"yes\" = \"red\", \"no\" = \"steelblue\")) +\n  stat_compare_means(comparisons = smoking.comparison, \n                     aes(label = ..p.signif..), \n                     label.y = 70000) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+    "text": "Smokers have higher medical cost than non-smokers\n\n\nShow me the code\nsmoking.comparison &lt;- list(c(\"yes\", \"no\"))\n\nggplot(data = medicalcost, aes(x = smoker, y = charges, fill = smoker)) +\n  geom_boxplot(alpha = 0.75) +\n  labs(title = \"Smoking significantly\\nincreases medical charges\") +\n  scale_fill_manual(values = c(\"yes\" = \"red\", \"no\" = \"steelblue\")) +\n  stat_compare_means(comparisons = smoking.comparison, \n                     aes(label = ..p.signif..), \n                     label.y = 70000) +\n  karl_theme +\n  theme(legend.position = \"none\") +\n  scale_y_continuous(breaks = c(20000, 40000, 60000),\n                     labels = c(\"$20k\", \"$40k\", \"$60k\"))\n\n\n\n\n\n\n\n\n\nUnpaired T test suggests that smokers have higher cost of medical charges than non-smokers. How does these two groups affect the medical cost with a third variable, such as age and BMI?"
   },
   {
     "objectID": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#relationship-between-bmi-and-medical-cost",
     "href": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#relationship-between-bmi-and-medical-cost",
     "title": "Medical Cost Prediction",
     "section": "Relationship between BMI and medical cost",
-    "text": "Relationship between BMI and medical cost\n\n\nShow me the code\nggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +\n  geom_point(alpha = 0.75, size = 2.5) +\n  scale_color_manual(values = c(\"yes\" = \"red\", \"no\" = \"steelblue\")) +\n    labs(title = \"High BMI smokers have increased medical cost\") +\n  theme_minimal()"
+    "text": "Relationship between BMI and medical cost\n\n\nShow me the code\nggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +\n  geom_point(alpha = 0.75, size = 2.5) +\n  scale_color_manual(values = c(\"yes\" = \"red\", \"no\" = \"steelblue\")) +\n    labs(title = \"High BMI smokers\\nhave increased medical cost\") +\n  scale_y_continuous(breaks = c(20000, 40000, 60000),\n                     labels = c(\"$20k\", \"$40k\", \"$60k\")) +\n  karl_theme"
+  },
+  {
+    "objectID": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#relationship-between-age-and-medical-cost",
+    "href": "Blog/Medical-Cost-Prediction/medical-cost-prediction.html#relationship-between-age-and-medical-cost",
+    "title": "Medical Cost Prediction",
+    "section": "Relationship between age and medical cost",
+    "text": "Relationship between age and medical cost\n\n\nShow me the code\nggplot(medicalcost, aes(x = age, y = charges, color = smoker)) +\n  geom_point(alpha = 0.75, size = 2.5) +\n  scale_color_manual(values = c(\"yes\" = \"red\", \"no\" = \"steelblue\")) +\n    labs(title = \"Older smokers are associated\\nwith higher medical charges\") +\n  scale_y_continuous(breaks = c(20000, 40000, 60000),\n                     labels = c(\"$20k\", \"$40k\", \"$60k\")) +\n  karl_theme"
   }
 ]
