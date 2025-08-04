@@ -24,7 +24,6 @@ The goal of this notebook is to characterize the dataset and ultimately help pre
 Let us start with loading the necessary packages for this analysis.
 
 ```{r}
-#| warning: false
 
 packages <- c("shiny", "tidyverse", "lubridate", "randomForest", "plotly",
               "ggstatsplot", "corrplot", "Hmisc", "flextable", "DT", "networkD3",
