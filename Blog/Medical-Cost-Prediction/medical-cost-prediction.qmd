@@ -162,7 +162,39 @@ ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
 
 # Model using Multiple Linear Regression
 
+## Perform modeling using training set using 80% of the data
 ```{r}
-model <- lm(charges ~ age + bmi + smoker, data = medicalcost)
+set.seed(123)
+sample_index <- sample(seq_len(nrow(medicalcost)), size = 0.8 * nrow(medicalcost))
+train_data <- medicalcost[sample_index, ]
+test_data <- medicalcost[-sample_index, ]
+
+model <- lm(charges ~ age + bmi + smoker, data = train_data)
 summary(model)
 ```
+According to the model:
+
+* For every additional increase in age, medical cost increases by $245.79.
+* For every unit increase in BMI, cost increases by $341.34.
+* Smokers are expected to cost $17k more than non-smokers, on average.
+
+## Test the model using 20% of the data
+```{r}
+test_data$predicted <- predict(model, newdata = test_data)
+
+ggplot(test_data, aes(x = predicted, y = charges, color = smoker)) +
+  geom_point(alpha = 0.75, size = 2.5) +
+  scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
+  geom_abline(slope = 1, intercept = 0, color="red", linetype="dashed") +
+  labs(title = "Predicted vs Actual medical charges",
+       x = "Predicted Charges", y = "Actual Charges") +
+  scale_y_continuous(breaks = c(10000, 20000, 30000, 40000, 50000),
+                     labels = c("$10k", "$20k", "$30k", "$40k", "$50k")) +
+  scale_x_continuous(breaks = c(10000, 20000, 30000, 40000),
+                     labels = c("$10k", "$20k", "$30k", "$40k")) +
+  karl_theme
+```
+
+
+
+
