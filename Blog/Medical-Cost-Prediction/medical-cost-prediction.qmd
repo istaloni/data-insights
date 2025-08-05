@@ -132,10 +132,11 @@ ggplot(data = medicalcost, aes(x = smoker, y = charges, fill = smoker)) +
                      breaks = c(20000, 40000, 60000, 80000),
                      labels = c("$20k", "$40k", "$60k", "$80k"))
 ```
-Unpaired T test suggests that smokers have higher cost of medical charges than non-smokers. How does these two groups affect the medical cost with a third variable, such as age and BMI? 
 
+Unpaired T test suggests that smokers have higher cost of medical charges than non-smokers. How does these two groups affect the medical cost with a third variable, such as age and BMI?
 
 ## Relationship between age and medical cost
+
 ```{r}
 ggplot(medicalcost, aes(x = age, y = charges, color = smoker)) +
   geom_point(alpha = 0.75, size = 2.5) +
@@ -145,7 +146,6 @@ ggplot(medicalcost, aes(x = age, y = charges, color = smoker)) +
                      labels = c("$20k", "$40k", "$60k")) +
   karl_theme
 ```
-
 
 ## Relationship between BMI and medical cost
 
@@ -163,6 +163,7 @@ ggplot(medicalcost, aes(x = bmi, y = charges, color = smoker)) +
 # Model using Multiple Linear Regression
 
 ## Perform modeling using training set using 80% of the data
+
 ```{r}
 set.seed(123)
 sample_index <- sample(seq_len(nrow(medicalcost)), size = 0.8 * nrow(medicalcost))
@@ -172,17 +173,21 @@ test_data <- medicalcost[-sample_index, ]
 model <- lm(charges ~ age + bmi + smoker, data = train_data)
 summary(model)
 ```
+
 According to the model:
 
-* For every additional increase in age, medical cost increases by $245.79.
-* For every unit increase in BMI, cost increases by $341.34.
-* Smokers are expected to cost $17k more than non-smokers, on average.
+-   For every additional increase in age, medical cost increases by \$245.79.
+-   For every unit increase in BMI, cost increases by \$341.34.
+-   Smokers are expected to cost \$17k more than non-smokers, on average.
 
 ## Test the model using 20% of the data
+
 ```{r}
 test_data$predicted <- predict(model, newdata = test_data)
+test_data <- test_data %>% 
+  filter(BMI.status != "Unknown")
 
-ggplot(test_data, aes(x = predicted, y = charges, color = smoker)) +
+ggplot(test_data, aes(x = predicted, y = charges, color = smoker, shape = BMI.status)) +
   geom_point(alpha = 0.75, size = 2.5) +
   scale_color_manual(values = c("yes" = "red", "no" = "steelblue")) +
   geom_abline(slope = 1, intercept = 0, color="red", linetype="dashed") +
@@ -194,7 +199,3 @@ ggplot(test_data, aes(x = predicted, y = charges, color = smoker)) +
                      labels = c("$10k", "$20k", "$30k", "$40k")) +
   karl_theme
 ```
-
-
-
-
