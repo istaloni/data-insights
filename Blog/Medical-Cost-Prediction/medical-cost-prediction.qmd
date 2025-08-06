@@ -201,4 +201,3 @@ ggplot(test_data, aes(x = predicted, y = charges, color = smoker, shape = BMI.st
 ```
 
 In our model testing, we see that the model underestimates actual medical charges for smoking obese demographic.
-
