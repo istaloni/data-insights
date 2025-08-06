@@ -199,3 +199,6 @@ ggplot(test_data, aes(x = predicted, y = charges, color = smoker, shape = BMI.st
                      labels = c("$10k", "$20k", "$30k", "$40k")) +
   karl_theme
 ```
+
+In our model testing, we see that the model underestimates actual medical charges for smoking obese demographic.
+
