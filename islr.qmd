@@ -1,5 +1,5 @@
 ---
-title: "References to Statistical and Machine Learning"
+title: "Statistical and Machine Learning"
 subtitle: "With Applications in R"
 listing:
   contents: chapters
@@ -8,5 +8,6 @@ listing:
   image-align: right
   categories: true
   filter-ui: true
+page-layout: full
 
 ---
