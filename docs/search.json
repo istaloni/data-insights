@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Residual Opinions",
     "section": "",
-    "text": "Medical Cost Prediction\n\n\n\nmedical\n\ncode\n\nclinical\n\n\n\nA machine learning approach to predict medical costs from demographic and health inputs\n\n\n\n\n\nAug 1, 2025\n\n\nKarl Marquez\n\n\n\n\n\n\n\n\n\n\n\n\nMedical Cost Analysis\n\n\n\nmedical\n\ncode\n\nclinical\n\n\n\nA statistical approach to predicting medical cost based on demographics and health conditions\n\n\n\n\n\nJul 29, 2025\n\n\nKarl Marquez\n\n\n\n\n\nNo matching items"
+    "text": "This blog strives to predict the future using statistical inference and machine learning.\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMedical Cost Prediction\n\n\n\nmedical\n\ncode\n\nclinical\n\n\n\nA machine learning approach to predict medical costs from demographic and health inputs\n\n\n\n\n\nAug 1, 2025\n\n\nKarl Marquez\n\n\n\n\n\n\n\n\n\n\n\n\nMedical Cost Analysis\n\n\n\nmedical\n\ncode\n\nclinical\n\n\n\nA statistical approach to predicting medical cost based on demographics and health conditions\n\n\n\n\n\nJul 29, 2025\n\n\nKarl Marquez\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -166,5 +166,19 @@
     "title": "Medical Cost Prediction",
     "section": "Test the model using 20% of the data",
     "text": "Test the model using 20% of the data\n\n\nShow me the code\ntest_data$predicted &lt;- predict(model, newdata = test_data)\ntest_data &lt;- test_data %&gt;% \n  filter(BMI.status != \"Unknown\")\n\nggplot(test_data, aes(x = predicted, y = charges, color = smoker, shape = BMI.status)) +\n  geom_point(alpha = 0.75, size = 2.5) +\n  scale_color_manual(values = c(\"yes\" = \"red\", \"no\" = \"steelblue\")) +\n  geom_abline(slope = 1, intercept = 0, color=\"red\", linetype=\"dashed\") +\n  labs(title = \"Predicted vs Actual medical charges\",\n       x = \"Predicted Charges\", y = \"Actual Charges\") +\n  scale_y_continuous(breaks = c(10000, 20000, 30000, 40000, 50000),\n                     labels = c(\"$10k\", \"$20k\", \"$30k\", \"$40k\", \"$50k\")) +\n  scale_x_continuous(breaks = c(10000, 20000, 30000, 40000),\n                     labels = c(\"$10k\", \"$20k\", \"$30k\", \"$40k\")) +\n  karl_theme\n\n\n\n\n\n\n\n\n\nIn our model testing, we see that the model underestimates actual medical charges for smoking obese demographic."
+  },
+  {
+    "objectID": "islr.html",
+    "href": "islr.html",
+    "title": "References to Statistical and Machine Learning",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nAug 7, 2025\n\n\nOne-Dimensional Data and Analysis\n\n\nKarl Marquez\n\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "chapters/UnivariateAnalysis.html",
+    "href": "chapters/UnivariateAnalysis.html",
+    "title": "One-Dimensional Data and Analysis",
+    "section": "",
+    "text": "Placeholder text\n\n\n\n\n Back to top"
   }
 ]

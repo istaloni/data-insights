@@ -1,0 +1,17 @@
+---
+title: "One-Dimensional Data and Analysis"
+description: "Mean, Median, Mode, etc."
+author: "Karl Marquez"
+date: 2025-08-07
+categories:
+  - statistics
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+execute: 
+  warning: false
+---
+
+# Placeholder text

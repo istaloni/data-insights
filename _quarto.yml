@@ -18,6 +18,8 @@ website:
     right:
       - text: "Posts"
         href: index.qmd
+      - text: "References"
+        href: islr.qmd
       - text: "About"
         href: about.qmd
   page-footer:
@@ -34,11 +36,11 @@ website:
     type: implied
     style: simple
     palette: light
+  back-to-top-navigation: true
         
 
 format:
   html:
-    linkcolor: "black"
     theme: 
       light: flatly
       dark: darkly

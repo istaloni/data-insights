@@ -1,0 +1,12 @@
+---
+title: "References to Statistical and Machine Learning"
+subtitle: "With Applications in R"
+listing:
+  contents: chapters
+  sort: "date desc"
+  type: table
+  image-align: right
+  categories: true
+  filter-ui: true
+
+---

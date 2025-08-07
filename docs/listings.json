@@ -11,5 +11,11 @@
       "/Blog/Medical-Cost-Prediction/medical-cost-prediction.html",
       "/Blog/Medical-Cost/MedicalCost.html"
     ]
+  },
+  {
+    "listing": "/islr.html",
+    "items": [
+      "/chapters/UnivariateAnalysis.html"
+    ]
   }
 ]
