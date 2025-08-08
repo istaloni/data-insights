@@ -10,3 +10,5 @@ listing:
   filter-ui: true
 page-layout: full
 ---
+
+# All contents here are from [ISLR website](https://www.statlearning.com)

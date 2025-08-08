@@ -48,6 +48,7 @@ advertising <- read.csv("Advertising.csv")
 Using Advertising data set, shown is a scatterplot of three advertising methods (input) to sales (output).
 ```{r}
 #| fig-cap: "TV, radio, and newspaper seems to have a positive association to sales. The more the company spends on TV advertisement, the higher the associated sales. Newspaper seems to be the weakest advertising method."
+
 p1 <- ggplot(data = advertising, aes(x = TV, y = sales)) +
         geom_point(alpha = 0.75, size = 2) +
         geom_smooth(method = "lm") +
@@ -60,11 +61,9 @@ p3 <- ggplot(data = advertising, aes(x = newspaper, y = sales)) +
         geom_point(alpha = 0.75, size = 2) +
         geom_smooth(method = "lm") +
         karl_theme
-grid.arrange(p1, p2, p3, ncol=3)
-
-
+grid.arrange(p1, p2, p3, ncol = 3)
 
 ```
 
-
+For the three plots above, I inserted a line that results in the least amount of errors 
 
