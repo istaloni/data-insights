@@ -20,3 +20,23 @@ execute:
 # What is statistical learning?
 
 Inputs can be referred to as *predictors*, *independent variable features*, or just *variables*. The output is often called the *response* or *dependent variable*.  
+
+```{r}
+packages <- c("ISLR2", "tidyverse")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+invisible(lapply(packages, library, character.only = TRUE))
+
+library(tidyverse)
+library(ISLR2)
+
+karl_theme <- theme_bw() +
+  theme(plot.title = element_text(size=20),
+        axis.title = element_text(size = 15),
+        axis.text = element_text(size = 12),
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=12))
+
+```
