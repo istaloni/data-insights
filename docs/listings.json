@@ -15,6 +15,7 @@
   {
     "listing": "/islr.html",
     "items": [
+      "/ISLRTopics/Why Estimate f/PredictionAndInference.html",
       "/ISLRTopics/Statistical Learning Intro/ISLRintro.html"
     ]
   },

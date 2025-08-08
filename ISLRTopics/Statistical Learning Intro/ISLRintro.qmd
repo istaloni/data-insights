@@ -130,6 +130,5 @@ As more inputs are involved and included in the model, the more complicated the 
 
 ***In essence, statistical learning refers to approaches for estimating $f$, to attempt to predict $Y$.*** 
 
-# Why Estimate $f$? 
 
 
