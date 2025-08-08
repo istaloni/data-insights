@@ -1,8 +1,8 @@
 ---
-title: "Statistics References"
+title: "Statistical and Machine Learning References"
 subtitle: "With Applications in R"
 listing:
-  contents: chapters
+  contents: ISLRTopics
   sort: "date desc"
   type: table
   image-align: right

@@ -19,6 +19,8 @@ website:
       - text: "Posts"
         href: index.qmd
       - text: "Statistics"
+        href: statistics.qmd
+      - text: "Machine Learning"
         href: islr.qmd
       - text: "About"
         href: about.qmd

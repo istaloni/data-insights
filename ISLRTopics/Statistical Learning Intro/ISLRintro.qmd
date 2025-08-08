@@ -1,0 +1,19 @@
+---
+title: "Statistical Learning Introduction"
+description: "My take on machine learning based on statistics"
+author: "Karl Marquez"
+date: 2025-08-07
+categories:
+  - machine learning
+  - r
+  - statistics
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+    css: styles.css
+execute: 
+  warning: false
+---
+
