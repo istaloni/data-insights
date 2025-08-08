@@ -9,5 +9,4 @@ listing:
   categories: true
   filter-ui: true
 page-layout: full
-
 ---

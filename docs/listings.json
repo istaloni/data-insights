@@ -17,5 +17,11 @@
     "items": [
       "/chapters/Univariate Analysis/UnivariateAnalysis.html"
     ]
+  },
+  {
+    "listing": "/statistics.html",
+    "items": [
+      "/chapters/Univariate Analysis/UnivariateAnalysis.html"
+    ]
   }
 ]
