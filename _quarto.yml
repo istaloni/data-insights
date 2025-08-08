@@ -18,7 +18,7 @@ website:
     right:
       - text: "Posts"
         href: index.qmd
-      - text: "References"
+      - text: "Statistics"
         href: islr.qmd
       - text: "About"
         href: about.qmd
