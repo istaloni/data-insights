@@ -21,8 +21,9 @@ execute:
 
 Inputs can be referred to as *predictors*, *independent variable features*, or just *variables*. The output is often called the *response* or *dependent variable*.  
 
+Loading packages and data set:
 ```{r}
-packages <- c("ISLR2", "tidyverse")
+packages <- c("ISLR2", "tidyverse", "ggplot2", "gridExtra")
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
@@ -31,6 +32,8 @@ invisible(lapply(packages, library, character.only = TRUE))
 
 library(tidyverse)
 library(ISLR2)
+library(ggplot2)
+library(gridExtra)
 
 karl_theme <- theme_bw() +
   theme(plot.title = element_text(size=20),
@@ -39,4 +42,29 @@ karl_theme <- theme_bw() +
         legend.title = element_text(size=12),
         legend.text = element_text(size=12))
 
+advertising <- read.csv("Advertising.csv")
 ```
+
+Using Advertising data set, shown is a scatterplot of three advertising methods (input) to sales (output).
+```{r}
+#| fig-cap: "TV, radio, and newspaper seems to have a positive association to sales. The more the company spends on TV advertisement, the higher the associated sales. Newspaper seems to be the weakest advertising method."
+p1 <- ggplot(data = advertising, aes(x = TV, y = sales)) +
+        geom_point(alpha = 0.75, size = 2) +
+        geom_smooth(method = "lm") +
+        karl_theme
+p2 <- ggplot(data = advertising, aes(x = radio, y = sales)) +
+        geom_point(alpha = 0.75, size = 2) +
+        geom_smooth(method = "lm") +
+        karl_theme
+p3 <- ggplot(data = advertising, aes(x = newspaper, y = sales)) +
+        geom_point(alpha = 0.75, size = 2) +
+        geom_smooth(method = "lm") +
+        karl_theme
+grid.arrange(p1, p2, p3, ncol=3)
+
+
+
+```
+
+
+
