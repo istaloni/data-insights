@@ -23,7 +23,8 @@ The goal of statistical learning is to develop an accurate model that can be use
 
 Loading packages and data set:
 ```{r}
-packages <- c("ISLR2", "tidyverse", "ggplot2", "gridExtra", "plotly")
+packages <- c("ISLR2", "tidyverse", "ggplot2", "gridExtra", "plotly",
+              "scatterplot3d")
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
@@ -35,6 +36,7 @@ library(ISLR2)
 library(ggplot2)
 library(gridExtra)
 library(plotly)
+library(scatterplot3d)
 
 karl_theme <- theme_bw() +
   theme(plot.title = element_text(size=20),
@@ -51,15 +53,15 @@ Using Advertising data set, shown is a scatterplot of three advertising methods 
 #| fig-cap: "TV, radio, and newspaper seems to have a positive association to sales. The more the company spends on TV advertisement, the higher the associated sales. Newspaper seems to be the weakest advertising method."
 
 p1 <- ggplot(data = advertising, aes(x = TV, y = sales)) +
-        geom_point(alpha = 0.75, size = 2) +
+        geom_point(alpha = 0.75, size = 2, color = "steelblue") +
         geom_smooth(method = "lm") +
         karl_theme
 p2 <- ggplot(data = advertising, aes(x = radio, y = sales)) +
-        geom_point(alpha = 0.75, size = 2) +
+        geom_point(alpha = 0.75, size = 2, color = "steelblue") +
         geom_smooth(method = "lm") +
         karl_theme
 p3 <- ggplot(data = advertising, aes(x = newspaper, y = sales)) +
-        geom_point(alpha = 0.75, size = 2) +
+        geom_point(alpha = 0.75, size = 2, color = "steelblue") +
         geom_smooth(method = "lm") +
         karl_theme
 grid.arrange(p1, p2, p3, ncol = 3)
@@ -79,10 +81,10 @@ income1 <- read.csv("Income1.csv")
 income1 <- income1 %>% 
   mutate(res = residuals(loess(Income ~ Education)))
 incomeplot1 <- ggplot(data = income1, aes(x = Education, y = Income)) +
-  geom_point(alpha = 0.75, size = 2.5) +
+  geom_point(alpha = 0.75, size = 2.5, color = "steelblue") +
   karl_theme
 incomeplot2 <- ggplot(data = income1, aes(x = Education, y = Income)) +
-  geom_point(alpha = 0.75, size = 2.5) + 
+  geom_point(alpha = 0.75, size = 2.5, color = "steelblue") + 
   geom_smooth(method = "loess", se = FALSE, color = "blue", formula = "y ~ x") +
   geom_segment(aes(xend = Education, yend = Income - res), color = "red") +
   karl_theme
@@ -94,22 +96,34 @@ In the real world, the function $f$ depends on more than one input. Adding anoth
 #| fig-cap: "Surface plane represents relationship between income and years of education and senority"
 income2 <- read.csv("Income2.csv")
 model <- lm(Income ~ Education + Seniority, data = income2)
-edu_seq <- seq(min(income2$Education), max(income2$Education), length.out = 30)
-sen_seq <- seq(min(income2$Seniority), max(income2$Seniority), length.out = 30)
-grid <- expand.grid(Education = edu_seq, Seniority = sen_seq)
-grid$Income_pred <- predict(model, newdata = grid)
+#edu_seq <- seq(min(income2$Education), max(income2$Education), length.out = 30)
+#sen_seq <- seq(min(income2$Seniority), max(income2$Seniority), length.out = 30)
+#grid <- expand.grid(Education = edu_seq, Seniority = sen_seq)
+#grid$Income_pred <- predict(model, newdata = grid)
 
-plot_ly() %>%
-  add_markers(data = income2, x = ~Education, y = ~Seniority, z = ~Income,
-              marker = list(color = 'blue'), name = "Data Points") %>%
-  add_surface(x = edu_seq, y = sen_seq,
-              z = matrix(grid$Income_pred, nrow = 30, ncol = 30),
-              opacity = 0.5, name = "Regression Plane") %>%
-  layout(scene = list(
-    xaxis = list(title = "Education"),
-    yaxis = list(title = "Seniority"),
-    zaxis = list(title = "Income")
-  ))
+#plot_ly() %>%
+  #add_markers(data = income2, x = ~Education, y = ~Seniority, z = ~Income,
+   #           marker = list(color = 'blue'), name = "Data Points") %>%
+  #add_surface(x = edu_seq, y = sen_seq,
+   #           z = matrix(grid$Income_pred, nrow = 30, ncol = 30),
+    #          opacity = 0.5, name = "Regression Plane") %>%
+  #layout(scene = list(
+   # xaxis = list(title = "Education"),
+  #  yaxis = list(title = "Seniority"),
+   # zaxis = list(title = "Income")
+  #))
+
+scatter3d <- scatterplot3d(income2$Education,
+                           income2$Seniority,
+                           income2$Income,
+                           pch = 16, color = "steelblue",
+                           angle = 55, type = "h",
+                           xlab = "Education",
+                           ylab = "Seniority",
+                           zlab = "Income",
+                           main = "3D Scatter Plot")
+scatter3d$plane3d(model)
+
 ```
 
 As more inputs are innvolved and included in the model, the more complicated the function gets. 
