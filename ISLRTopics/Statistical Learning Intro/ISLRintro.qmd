@@ -91,7 +91,7 @@ incomeplot2 <- ggplot(data = income1, aes(x = Education, y = Income)) +
 grid.arrange(incomeplot1, incomeplot2, ncol = 2)
 ```
 
-In the real world, the function $f$ depends on more than one input. Adding another variable (seniority), the relationship tracking income using Education and Seniority is now a plane. 
+In the real world, the function $f$ depends on more than one input. Adding another variable (seniority), the relationship tracking income using Education and Seniority is now a plane, a two-dimensional data that is estimated based on the two variables observed.
 ```{r}
 #| fig-cap: "Surface plane represents relationship between income and years of education and senority"
 income2 <- read.csv("Income2.csv")
@@ -126,8 +126,10 @@ scatter3d$plane3d(model)
 
 ```
 
-As more inputs are innvolved and included in the model, the more complicated the function gets. 
+As more inputs are involved and included in the model, the more complicated the function gets. 
 
 ***In essence, statistical learning refers to approaches for estimating $f$, to attempt to predict $Y$.*** 
+
+# Why Estimate $f$? 
 
 
