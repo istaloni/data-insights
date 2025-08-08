@@ -207,7 +207,7 @@
     "href": "ISLRTopics/Why Estimate f/PredictionAndInference.html",
     "title": "Prediction and Inference",
     "section": "",
-    "text": "Prediction\nInference"
+    "text": "Prediction\nInference\n\n\n\nFrom a previous post, the error term \\(\\epsilon\\) is a random error term that have approximately a mean of zero. In this setting, we can predict Y using \\[\nY = \\hat{f}(X)\\] where \\(\\hat{f}\\) is usually a black box - it’s exact form isn’t important if it gives accurate predictions for \\(Y\\).\nAs an example, suppose \\(X_1, \\dots, X_p\\) are observations from patient blood samples measured in the lab."
   },
   {
     "objectID": "ISLRTopics/Why Estimate f/PredictionAndInference.html#prediction",
