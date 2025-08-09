@@ -28,7 +28,11 @@ where $\hat{f}$ is usually a black box - it's exact form isn't important if it g
 
 As an example, we use a patient's blood measurtements $X$ to predict their risk $Y$ of an adverse drug reaction, so we can avoid giving risky treatments.
 
-
+The accuracy of $\hat{Y}$ as a prediction for $Y$ depends on:
+* Reducible error 
+  + placeholder text
+* Irreducible error
+  + placeholder text
 
 
 
