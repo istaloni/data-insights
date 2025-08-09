@@ -207,13 +207,41 @@
     "href": "ISLRTopics/Why Estimate f/PredictionAndInference.html",
     "title": "Prediction and Inference",
     "section": "",
-    "text": "Prediction\nInference\n\n\n\nFrom a previous post, the error term \\(\\epsilon\\) is a random error term that have approximately a mean of zero. In this setting, we can predict Y using \\[\nY = \\hat{f}(X)\\] where \\(\\hat{f}\\) is usually a black box - it’s exact form isn’t important if it gives accurate predictions for \\(Y\\).\nAs an example, we use a patient’s blood measurtements \\(X\\) to predict their risk \\(Y\\) of an adverse drug reaction, so we can avoid giving risky treatments."
+    "text": "Prediction\nInference\n\n\n\nFrom a previous post, the error term \\(\\epsilon\\) is a random error term that have approximately a mean of zero. In this setting, we can predict Y using \\[\nY = \\hat{f}(X)\\] where \\(\\hat{f}\\) is usually a black box - it’s exact form isn’t important if it gives accurate predictions for \\(Y\\).\nAs an example, we use a patient’s blood measurtements \\(X\\) to predict their risk \\(Y\\) of an adverse drug reaction, so we can avoid giving risky treatments.\nThe accuracy of \\(\\hat{Y}\\) as a prediction for \\(Y\\) depends on: * Reducible error * Irreducible error"
   },
   {
     "objectID": "ISLRTopics/Why Estimate f/PredictionAndInference.html#prediction",
     "href": "ISLRTopics/Why Estimate f/PredictionAndInference.html#prediction",
     "title": "Prediction and Inference",
     "section": "",
+    "text": "From a previous post, the error term \\(\\epsilon\\) is a random error term that have approximately a mean of zero. In this setting, we can predict Y using \\[\nY = \\hat{f}(X)\\] where \\(\\hat{f}\\) is usually a black box - it’s exact form isn’t important if it gives accurate predictions for \\(Y\\).\nAs an example, we use a patient’s blood measurtements \\(X\\) to predict their risk \\(Y\\) of an adverse drug reaction, so we can avoid giving risky treatments.\nThe accuracy of \\(\\hat{Y}\\) as a prediction for \\(Y\\) depends on: * Reducible error * Irreducible error"
+  },
+  {
+    "objectID": "ISLRTopics/Why Estimate f/PredictionAndInference.html#inference",
+    "href": "ISLRTopics/Why Estimate f/PredictionAndInference.html#inference",
+    "title": "Prediction and Inference",
+    "section": "Inference",
+    "text": "Inference"
+  },
+  {
+    "objectID": "ISLRTopics/Why Estimate f/WhyEstimateF.html",
+    "href": "ISLRTopics/Why Estimate f/WhyEstimateF.html",
+    "title": "Prediction and Inference",
+    "section": "",
+    "text": "Prediction\nInference\n\n\n\nFrom a previous post, the error term \\(\\epsilon\\) is a random error term that have approximately a mean of zero. In this setting, we can predict Y using \\[\nY = \\hat{f}(X)\\] where \\(\\hat{f}\\) is usually a black box - it’s exact form isn’t important if it gives accurate predictions for \\(Y\\).\nAs an example, we use a patient’s blood measurtements \\(X\\) to predict their risk \\(Y\\) of an adverse drug reaction, so we can avoid giving risky treatments."
+  },
+  {
+    "objectID": "ISLRTopics/Why Estimate f/WhyEstimateF.html#prediction",
+    "href": "ISLRTopics/Why Estimate f/WhyEstimateF.html#prediction",
+    "title": "Prediction and Inference",
+    "section": "",
     "text": "From a previous post, the error term \\(\\epsilon\\) is a random error term that have approximately a mean of zero. In this setting, we can predict Y using \\[\nY = \\hat{f}(X)\\] where \\(\\hat{f}\\) is usually a black box - it’s exact form isn’t important if it gives accurate predictions for \\(Y\\).\nAs an example, we use a patient’s blood measurtements \\(X\\) to predict their risk \\(Y\\) of an adverse drug reaction, so we can avoid giving risky treatments."
+  },
+  {
+    "objectID": "ISLRTopics/Why Estimate f/WhyEstimateF.html#inference",
+    "href": "ISLRTopics/Why Estimate f/WhyEstimateF.html#inference",
+    "title": "Prediction and Inference",
+    "section": "Inference",
+    "text": "Inference"
   }
 ]
