@@ -26,6 +26,13 @@ From a previous post, the error term $\epsilon$ is a random error term that have
 Y = \hat{f}(X)$$
 where $\hat{f}$ is usually a black box - it's exact form isn't important if it gives accurate predictions for $Y$. 
 
-As an example, suppose $X_1, \dots, X_p$ are observations from patient blood samples measured in the lab.
+As an example, we use a patient's blood measurtements $X$ to predict their risk $Y$ of an adverse drug reaction, so we can avoid giving risky treatments.
+
+
+
+
+
+
+
 
 ## Inference
