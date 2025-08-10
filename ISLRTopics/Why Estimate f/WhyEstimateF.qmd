@@ -42,3 +42,33 @@ The accuracy of $\hat{Y}$ as a prediction for $Y$ depends on
 
 ## Inference
 
+The goal of inference is not necessarily to make predictions for $Y$, but to understand the association between $Y$ and its predictors $X_1, \dots, X_p$. Therefore, we need to know the exact form of $\hat{f}$. 
+
+Key questions in inference: 
+
+* Identify important predictors: Only a small subset of variables may meaningfully affect $Y$. 
+* Understand relationships: 
+  + Direction (positive or negative association)
+  + Possible interactions with other predictors 
+* Model form: Determine if a simple linear model is sufficicent or if a more complex, nonlinear approach is needed.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

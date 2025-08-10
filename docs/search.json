@@ -241,7 +241,7 @@
     "objectID": "ISLRTopics/Why Estimate f/WhyEstimateF.html#inference",
     "href": "ISLRTopics/Why Estimate f/WhyEstimateF.html#inference",
     "title": "Prediction and Inference",
-    "section": "Inference",
-    "text": "Inference"
+    "section": "",
+    "text": "The goal of inference is not necessarily to make predictions for \\(Y\\), but to understand the association between \\(Y\\) and its predictors \\(X_1, \\dots, X_p\\). Therefore, we need to know the exact form of \\(\\hat{f}\\).\nKey questions in inference:\n\nIdentify important predictors: Only a small subset of variables may meaningfully affect \\(Y\\).\nUnderstand relationships:\n\nDirection (positive or negative association)\nPossible interactions with other predictors\n\nModel form: Determine if a simple linear model is sufficicent or if a more complex, nonlinear approach is needed."
   }
 ]
