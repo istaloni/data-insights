@@ -257,5 +257,12 @@
     "title": "Prediction Accuracy vs Model Interpretability",
     "section": "",
     "text": "The Trade-Off Between Prediction Accuracy and Model Interpretability\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "ISLRTopics/Accuracy vs Interpretability/AccuarcyVsInterpretability.html#the-trade-off-between-prediction-accuracy-and-model-interpretability",
+    "href": "ISLRTopics/Accuracy vs Interpretability/AccuarcyVsInterpretability.html#the-trade-off-between-prediction-accuracy-and-model-interpretability",
+    "title": "Prediction Accuracy vs Model Interpretability",
+    "section": "",
+    "text": "Statistical learning methods vary in flexibility - some, like linear regression, can model only simple relationships, while others, like splines, boosting, and neural networks, can capture highly complex patterns. * Less flexible methods (e.g. linear regression, lasso) are often preferred for inference because they are more interpretable * More flexible methods (e.g. Generalized Additive Models, boosting, neural networks) can model complex relationships but are harder to interpret * For prediction-focused tasks, flexibility can help but also risks overfitting, sometimes making less flexible models more accurate.\n*Choosing the right method involves balancing flexibility, interpretability, and risk of overfitting.**"
   }
 ]
