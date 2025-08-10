@@ -52,7 +52,20 @@ Key questions in inference:
   + Possible interactions with other predictors 
 * Model form: Determine if a simple linear model is sufficicent or if a more complex, nonlinear approach is needed.
   
-
+## Prediction and Inference Summary 
+* Prediction example:
+  + Direct marketing campaign: Predict likelihood of positive response using demographic predictors
+  + Goal is *accurate prediction*, not understanding the relationship between each predictor and response
+* Inference example:
+  + Advertising data: questions about which media affect sales, size of effects, and marginal gains from TV ads
+  + Goal is *understanding associations* between predictors and response
+* Both prediction and inference:
+  + Real estate: predicting house price (prediction) vs estimating impact of each feature (inference).
+  
+  
+  
+  
+  
 
 
 
