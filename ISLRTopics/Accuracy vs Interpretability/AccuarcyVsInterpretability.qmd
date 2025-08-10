@@ -1,0 +1,21 @@
+---
+title: "Prediction Accuracy vs Model Interpretability"
+description: "My take on machine learning based on statistics"
+author: "Karl Marquez"
+date: 2025-08-10
+categories:
+  - machine learning
+  - r
+  - statistics
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+    css: styles.css
+execute: 
+  warning: false
+---
+
+# The Trade-Off Between Prediction Accuracy and Model Interpretability
+![](accuracyinterpretability.jpg)
