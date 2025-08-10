@@ -1,5 +1,5 @@
 ---
-title: "Statistical Learning Introduction"
+title: "The Goal of Statistical Learning - estimating $f$"
 description: "My take on machine learning based on statistics"
 author: "Karl Marquez"
 date: 2025-08-07

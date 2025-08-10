@@ -1,5 +1,5 @@
 ---
-title: "Prediction and Inference"
+title: "Why estimate $f$ - Prediction vs Inference"
 description: "the answer to why we would estimate f"
 author: "Karl Marquez"
 date: 2025-08-08
