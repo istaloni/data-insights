@@ -29,4 +29,4 @@ Statistical learning methods vary in flexibility - some, like linear regression,
 * For **prediction-focused tasks**, flexibility can help but also risks **overfitting**, sometimes making less flexible models more accurate. 
 
 
-***Choosing the right method involves balancing **flexibility, interpretability, and risk of overfitting.***
+***Choosing the right method involves balancing flexibility, interpretability, and risk of overfitting.***
