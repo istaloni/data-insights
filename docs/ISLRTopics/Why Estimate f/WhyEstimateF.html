@@ -422,8 +422,17 @@ Y = \hat{f}(X)\]</span> where <span class="math inline">\(\hat{f}\)</span> is us
 <p>As an example, we use a patient’s blood measurtements <span class="math inline">\(X\)</span> to predict their risk <span class="math inline">\(Y\)</span> of an adverse drug reaction, so we can avoid giving risky treatments.</p>
 <p>The accuracy of <span class="math inline">\(\hat{Y}\)</span> as a prediction for <span class="math inline">\(Y\)</span> depends on</p>
 <ul>
-<li>Reducible error</li>
-<li>Irreducible error</li>
+<li>Reducible error
+<ul>
+<li>Happens when <span class="math inline">\(\hat{f}\)</span> is not a perfect estimate of <span class="math inline">\(f\)</span></li>
+<li>Can be reduced by using better statistical learning methods</li>
+</ul></li>
+<li>Irreducible error
+<ul>
+<li>Even with a perfect estimate <span class="math inline">\(\hat{Y} = f(X)\)</span> errors remain due to the random noise term <span class="math inline">\(\epsilon\)</span></li>
+<li>May contain variables that affect <span class="math inline">\(Y\)</span> but are not recorded, so <span class="math inline">\(f\)</span> cannot use them</li>
+<li>May include natural day-to-day variation in outcomes (e.g., patient’s health status, drug manufacturing differences)</li>
+</ul></li>
 </ul>
 </section>
 <section id="inference" class="level2">

@@ -31,7 +31,14 @@ As an example, we use a patient's blood measurtements $X$ to predict their risk 
 The accuracy of $\hat{Y}$ as a prediction for $Y$ depends on
 
 * Reducible error
+  + Happens when $\hat{f}$ is not a perfect estimate of $f$
+  + Can be reduced by using better statistical learning methods
 * Irreducible error
+  + Even with a perfect estimate $\hat{Y} = f(X)$ errors remain due to the random noise term $\epsilon$
+  + May contain variables that affect $Y$ but are not recorded, so $f$ cannot use them
+  + May include natural day-to-day variation in outcomes (e.g., patient's health status, drug manufacturing differences)
+
+***The focus of statistical learning is on techniques for estimating $f$ to minimize the reducible error.*** 
 
 ## Inference
 
