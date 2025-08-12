@@ -331,6 +331,7 @@ cookieconsent.run({
   <ul class="collapse">
   <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning">Supervised Learning</a></li>
   <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a></li>
+  <li><a href="#semi-supervised-learning" id="toc-semi-supervised-learning" class="nav-link" data-scroll-target="#semi-supervised-learning">Semi-supervised learning</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -404,9 +405,13 @@ cookieconsent.run({
 <li>Examples include:
 <ul>
 <li>Cluster analysis, where we find structure or patterns among observations</li>
-<li><img src="clustering.jpg" class="img-fluid"></li>
 </ul></li>
 </ul>
+<p><img src="clustering.jpg" class="img-fluid"> Above is an example of a clustering analysis using two variables. The left plot shows that groups are well separated, while the right plot shows some overlapping clusters, making perfect assignments impossible. High dimensional data with many variables can also make visual inspection impractical - thus automated clustering methods are essential.</p>
+</section>
+<section id="semi-supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="semi-supervised-learning">Semi-supervised learning</h3>
+<p>Sometimes, only part of the data set has both predictors and responses, while the rest has predictors only. This happens when predictors are cheap to collect but responses are costly. The goal then is to use methods that leverage both labeled and unlabeled data.</p>
 
 
 </section>

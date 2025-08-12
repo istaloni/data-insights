@@ -37,7 +37,8 @@ Here, we observe a vector of measurements, but there is no associated response. 
 ![](clustering.jpg)
 Above is an example of a clustering analysis using two variables. The left plot shows that groups are well separated, while the right plot shows some overlapping clusters, making perfect assignments impossible. High dimensional data with many variables can also make visual inspection impractical - thus automated clustering methods are essential. 
 
-  
+### Semi-supervised learning
+Sometimes, only part of the data set has both predictors and responses, while the rest has predictors only. This happens when predictors are cheap to collect but responses are costly. The goal then is to use methods that leverage both labeled and unlabeled data. 
   
   
   
