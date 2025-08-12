@@ -270,13 +270,13 @@
     "href": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html",
     "title": "Supervised vs Unsupervised Learning",
     "section": "",
-    "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference)."
+    "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference).\n\nExamples include:\n\nLinear regression, Logistic regression\nGeneralized Additive Models, Boosting, Support Vector Machines"
   },
   {
     "objectID": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html#classifying-statistical-learning-problems-as",
     "href": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html#classifying-statistical-learning-problems-as",
     "title": "Supervised vs Unsupervised Learning",
     "section": "",
-    "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference)."
+    "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference).\n\nExamples include:\n\nLinear regression, Logistic regression\nGeneralized Additive Models, Boosting, Support Vector Machines"
   }
 ]
