@@ -33,7 +33,10 @@ Here, we observe a vector of measurements, but there is no associated response. 
 
 * Examples include:
   + Cluster analysis, where we find structure or patterns among observations
-  + ![clustering.jpg]
+
+![](clustering.jpg)
+Above is an example of a clustering analysis using two variables. The left plot shows that groups are well separated, while the right plot shows some overlapping clusters, making perfect assignments impossible. High dimensional data with many variables can also make visual inspection impractical - thus automated clustering methods are essential. 
+
   
   
   
