@@ -1,0 +1,28 @@
+---
+title: "Supervised vs Unsupervised Learning"
+description: "My take on machine learning based on statistics"
+author: "Karl Marquez"
+date: 2025-08-11
+categories:
+  - machine learning
+  - r
+  - statistics
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+    css: styles.css
+execute: 
+  warning: false
+---
+
+## Classifying statistical learning problems as: 
+* Supervised
+* Unsupervised
+
+### Supervised Learning 
+For this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference). 
+* Examples include: 
+  + Linear regression, Logistic regression 
+  + Generalized Additive Models, Boosting, Support Vector Machines

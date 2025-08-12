@@ -264,5 +264,19 @@
     "title": "Prediction Accuracy vs Model Interpretability",
     "section": "",
     "text": "Statistical learning methods vary in flexibility - some, like linear regression, can model only simple relationships, while others, like splines, boosting, and neural networks, can capture highly complex patterns.\n\nLess flexible methods (e.g. linear regression, lasso) are often preferred for inference because they are more interpretable\nMore flexible methods (e.g. Generalized Additive Models, boosting, neural networks) can model complex relationships but are harder to interpret\nFor prediction-focused tasks, flexibility can help but also risks overfitting, sometimes making less flexible models more accurate.\n\nChoosing the right method involves balancing flexibility, interpretability, and risk of overfitting."
+  },
+  {
+    "objectID": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html",
+    "href": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html",
+    "title": "Supervised vs Unsupervised Learning",
+    "section": "",
+    "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference)."
+  },
+  {
+    "objectID": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html#classifying-statistical-learning-problems-as",
+    "href": "ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html#classifying-statistical-learning-problems-as",
+    "title": "Supervised vs Unsupervised Learning",
+    "section": "",
+    "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference)."
   }
 ]
