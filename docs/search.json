@@ -278,5 +278,19 @@
     "title": "Supervised vs Unsupervised Learning",
     "section": "",
     "text": "Supervised\nUnsupervised\n\n\n\nFor this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference).\n\nExamples include:\n\nLinear regression, Logistic regression\nGeneralized Additive Models, Boosting, Support Vector Machines\n\n\n\n\n\nHere, we observe a vector of measurements, but there is no associated response. In a way, there is no north star; in a way, we are working blind. We lack a response variable that supervises our model. We are only concerned about understanding the relationships between the given variables or observations.\n\nExamples include:\n\nCluster analysis, where we find structure or patterns among observations\n\n\n\nAbove is an example of a clustering analysis using two variables. The left plot shows that groups are well separated, while the right plot shows some overlapping clusters, making perfect assignments impossible. High dimensional data with many variables can also make visual inspection impractical - thus automated clustering methods are essential.\n\n\n\nSometimes, only part of the data set has both predictors and responses, while the rest has predictors only. This happens when predictors are cheap to collect but responses are costly. The goal then is to use methods that leverage both labeled and unlabeled data."
+  },
+  {
+    "objectID": "ISLRTopics/Regression vs Classification/RegressionClassification.html",
+    "href": "ISLRTopics/Regression vs Classification/RegressionClassification.html",
+    "title": "Regression versus Classification Problems",
+    "section": "",
+    "text": "The type of response variable determines the nature of the problem: if the response is quantitative, it is treated as a regression task, whereas if the response is qualitative, it is addressed as a classification task. However, whether the predictors are qualitative or quantitative is generally considered less important.\n\n\n\nWhen response variable is quantitative\n\nAge, height, income\nHouse value, stock price\n\n\n\n\n\n\nWhen response variable is qualitative\n\nMarital status (married or not)\nProduct brand purchased (brand A, B, or C)\nCancer diagnosis (Acute Myelogenous Leukemia, Acute Lymphoblastic Leukemia, No Leukemia)"
+  },
+  {
+    "objectID": "ISLRTopics/Regression vs Classification/RegressionClassification.html#how-to-select-a-statistical-learning-method",
+    "href": "ISLRTopics/Regression vs Classification/RegressionClassification.html#how-to-select-a-statistical-learning-method",
+    "title": "Regression versus Classification Problems",
+    "section": "",
+    "text": "The type of response variable determines the nature of the problem: if the response is quantitative, it is treated as a regression task, whereas if the response is qualitative, it is addressed as a classification task. However, whether the predictors are qualitative or quantitative is generally considered less important.\n\n\n\nWhen response variable is quantitative\n\nAge, height, income\nHouse value, stock price\n\n\n\n\n\n\nWhen response variable is qualitative\n\nMarital status (married or not)\nProduct brand purchased (brand A, B, or C)\nCancer diagnosis (Acute Myelogenous Leukemia, Acute Lymphoblastic Leukemia, No Leukemia)"
   }
 ]
