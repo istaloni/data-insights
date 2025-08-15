@@ -15,6 +15,7 @@
   {
     "listing": "/islr.html",
     "items": [
+      "/ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html",
       "/ISLRTopics/Regression vs Classification/RegressionClassification.html",
       "/ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html",
       "/ISLRTopics/Accuracy vs Interpretability/AccuarcyVsInterpretability.html",

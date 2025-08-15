@@ -292,5 +292,19 @@
     "title": "Regression versus Classification Problems",
     "section": "",
     "text": "The type of response variable determines the nature of the problem: if the response is quantitative, it is treated as a regression task, whereas if the response is qualitative, it is addressed as a classification task. However, whether the predictors are qualitative or quantitative is generally considered less important.\n\n\n\nWhen response variable is quantitative\n\nAge, height, income\nHouse value, stock price\n\n\n\n\n\n\nWhen response variable is qualitative\n\nMarital status (married or not)\nProduct brand purchased (brand A, B, or C)\nCancer diagnosis (Acute Myelogenous Leukemia, Acute Lymphoblastic Leukemia, No Leukemia)"
+  },
+  {
+    "objectID": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html",
+    "href": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html",
+    "title": "How to Assess Model Accuracy",
+    "section": "",
+    "text": "In statistical learning, there is no single method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html#measure-the-quality-of-fit",
+    "href": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html#measure-the-quality-of-fit",
+    "title": "How to Assess Model Accuracy",
+    "section": "Measure the Quality of Fit",
+    "text": "Measure the Quality of Fit\nWe need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation."
   }
 ]

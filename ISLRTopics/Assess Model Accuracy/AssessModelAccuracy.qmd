@@ -1,0 +1,23 @@
+---
+title: "How to Assess Model Accuracy"
+description: "My take on machine learning based on statistics"
+author: "Karl Marquez"
+date: 2025-08-11
+categories:
+  - machine learning
+  - r
+  - statistics
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+    css: styles.css
+execute: 
+  warning: false
+---
+
+In statistical learning, there is no *single* method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result. 
+
+## Measure the Quality of Fit
+We need to quantify to what extent does the model's predicted response for a given observation is close to the true response for a given observation. 
