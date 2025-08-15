@@ -56,7 +56,7 @@ If there are no test observations to evaluate the model, an option might be to j
 As model flexibility increases, the training MSE will decrease, but the test MSE may not. If this is the case, the statistical method is ***overfitting*** the data.
 :::
 
-
+Overfitting happens when the flexible model is working too hard to find patterns in our training data, not knowing that the patterns can be caused by random chance/error, the $\epsilon$. When a less flexible model would have yielded a smaller test MSE, then we are definitely overfitting. 
   
 
 
