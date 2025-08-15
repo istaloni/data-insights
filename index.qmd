@@ -12,4 +12,4 @@ page-layout: full
 title-block-banner: true
 ---
 
-# This blog strives to predict the future using statistical inference and machine learning. 
+# This blog strives to predict the future using statistical inference and machine learning.
