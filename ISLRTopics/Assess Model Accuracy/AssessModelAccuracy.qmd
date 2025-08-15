@@ -26,13 +26,26 @@ $$
 $$
 where $\hat{f}(x_i)$ is the prediction that $\hat{f}$ gives for the $i$th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response. 
 
-The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we cannot use the same set of observations (the training data); rather we want to use an *unseen* variable that has not been used by the model for training. For example:
+The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an *unseen* variable that has not been used by the model for training. For example: 
+
 * We developed an algorithm to predict a stock price based on data from the past 6 months. 
-  + We do not really care how well the model predicts last week's stock price (*training data*)
-  + We care how the model predicts tomorrow's stock price (*test data*)
+  + We do not really care how well the model predicts last week's stock price (*training data*) 
+  + We care how the model predicts tomorrow's stock price (*test data*) 
 * We developed an algorithm to predict diabetes risk based on previous patient's clinical measurements 
   + We are not concerned how the model predicts diabetes risk for patients used to train the model (*training data*) 
-  + We care about how the method accurately predicts diabetes risk for *future* patients (*test data*)
+  + We care about how the method accurately predicts diabetes risk for *future* patients (*test data*) 
+  
+If there are no test observations to evaluate the model, an option might be to just use the training data to minimize the training MSE, but this does not guarantee the lowest test MSE. To grasp the concept, see figure: 
+![](testvstrainMSE.jpg) 
+* Left panel: 
+  + True $f$ is black
+  + Orange linear regression is inflexible, next is blue smoothing spline, and the most flexible is green smoothing spline 
+  + Most flexible green spline is following the training data too closely, deviating away from the true $f$ 
+
+
+  
+
+
 
 
 

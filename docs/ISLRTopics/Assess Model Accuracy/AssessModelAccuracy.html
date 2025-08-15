@@ -410,7 +410,20 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></h2>
 <p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
-\]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation.</p>
+\]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response.</p>
+<p>The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we cannot use the same set of observations (the training data); rather we want to use an <em>unseen</em> variable that has not been used by the model for training. For example:</p>
+<ul>
+<li>We developed an algorithm to predict a stock price based on data from the past 6 months.
+<ul>
+<li>We do not really care how well the model predicts last week’s stock price (<em>training data</em>)</li>
+<li>We care how the model predicts tomorrow’s stock price (<em>test data</em>)</li>
+</ul></li>
+<li>We developed an algorithm to predict diabetes risk based on previous patient’s clinical measurements
+<ul>
+<li>We are not concerned how the model predicts diabetes risk for patients used to train the model (<em>training data</em>)</li>
+<li>We care about how the method accurately predicts diabetes risk for <em>future</em> patients (<em>test data</em>)</li>
+</ul></li>
+</ul>
 
 
 </section>
