@@ -356,7 +356,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-estimate-f" id="toc-why-estimate-f" class="nav-link active" data-scroll-target="#why-estimate-f">Why estimate <span class="math inline">\(f\)</span>?</a>
+  <li><a href="#reason-to-estimate-f---prediction-and-inference" id="toc-reason-to-estimate-f---prediction-and-inference" class="nav-link active" data-scroll-target="#reason-to-estimate-f---prediction-and-inference">Reason to estimate <span class="math inline">\(f\)</span> - Prediction and Inference</a>
   <ul class="collapse">
   <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">Prediction</a></li>
   <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">Inference</a></li>
@@ -369,7 +369,7 @@ window.Quarto = {
   <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a></li>
   <li><a href="#semi-supervised-learning" id="toc-semi-supervised-learning" class="nav-link" data-scroll-target="#semi-supervised-learning">Semi-supervised learning</a></li>
   </ul></li>
-  <li><a href="#how-to-select-a-statistical-learning-method" id="toc-how-to-select-a-statistical-learning-method" class="nav-link" data-scroll-target="#how-to-select-a-statistical-learning-method">How to select a statistical learning method</a>
+  <li><a href="#selecting-a-statistical-learning-method-in-supervised-learning" id="toc-selecting-a-statistical-learning-method-in-supervised-learning" class="nav-link" data-scroll-target="#selecting-a-statistical-learning-method-in-supervised-learning">Selecting a statistical learning method in Supervised Learning</a>
   <ul class="collapse">
   <li><a href="#regression-task" id="toc-regression-task" class="nav-link" data-scroll-target="#regression-task">Regression task</a></li>
   <li><a href="#classification-task" id="toc-classification-task" class="nav-link" data-scroll-target="#classification-task">Classification task</a></li>
@@ -422,21 +422,46 @@ window.Quarto = {
 </header>
 
 
-<section id="why-estimate-f" class="level2">
-<h2 class="anchored" data-anchor-id="why-estimate-f">Why estimate <span class="math inline">\(f\)</span>?</h2>
-<p><em>Prediction </em>Inference</p>
+<section id="reason-to-estimate-f---prediction-and-inference" class="level2">
+<h2 class="anchored" data-anchor-id="reason-to-estimate-f---prediction-and-inference">Reason to estimate <span class="math inline">\(f\)</span> - Prediction and Inference</h2>
 <section id="prediction" class="level3">
 <h3 class="anchored" data-anchor-id="prediction">Prediction</h3>
 <p>From a previous post, the error term <span class="math inline">\(\epsilon\)</span> is a random error term that have approximately a mean of zero. In this setting, we can predict Y using <span class="math display">\[
-Y = \hat{f}(X)\]</span> where <span class="math inline">\(\hat{f}\)</span> is usually a black box - it’s exact form isn’t important if it gives accurate predictions for <span class="math inline">\(Y\)</span>.</p>
-<p>As an example, we use a patient’s blood measurtements <span class="math inline">\(X\)</span> to predict their risk <span class="math inline">\(Y\)</span> of an adverse drug reaction, so we can avoid giving risky treatments.</p>
-<p>The accuracy of <span class="math inline">\(\hat{Y}\)</span> as a prediction for <span class="math inline">\(Y\)</span> depends on * Reducible error + Happens when <span class="math inline">\(\hat{f}\)</span> is not a perfect estimate of <span class="math inline">\(f\)</span> + Can be reduced by using better statistical learning methods *Irreducible error + Even with a perfect estimate <span class="math inline">\(\hat{Y} = f(X)\)</span> errors remain due to the random noise term <span class="math inline">\(\epsilon\)</span> + May contain variables that affect <span class="math inline">\(Y\)</span> but are not recorded, so <span class="math inline">\(f\)</span> cannot use them + May include natural day-to-day variation in outcomes (e.g., patient’s health status, drug manufacturing differences)</p>
+Y = \hat{f}(X)\]</span> where <span class="math inline">\(\hat{f}\)</span> is usually a black box - it’s exact form isn’t important if it gives accurate predictions for <span class="math inline">\(Y\)</span>. As an example, we use a patient’s blood measurements <span class="math inline">\(X\)</span> to predict their risk <span class="math inline">\(Y\)</span> of an adverse drug reaction, so we can avoid giving risky treatments.</p>
+<p>The accuracy of <span class="math inline">\(\hat{Y}\)</span> as a prediction for <span class="math inline">\(Y\)</span> depends on:</p>
+<ul>
+<li>Reducible error
+<ul>
+<li>Happens when <span class="math inline">\(\hat{f}\)</span> is not a perfect estimate of <span class="math inline">\(f\)</span></li>
+<li>Can be reduced by using better statistical learning methods</li>
+</ul></li>
+<li>Irreducible error
+<ul>
+<li>Even with a perfect estimate <span class="math inline">\(\hat{Y} = f(X)\)</span> errors remain due to the random noise term <span class="math inline">\(\epsilon\)</span></li>
+<li>May contain variables that affect <span class="math inline">\(Y\)</span> but are not recorded, so <span class="math inline">\(f\)</span> cannot use them</li>
+<li>May include natural day-to-day variation in outcomes (e.g., patient’s health status, drug manufacturing differences)</li>
+</ul></li>
+</ul>
 <p><strong><em>The focus of statistical learning is on techniques for estimating</em></strong> <span class="math inline">\(f\)</span> to minimize the reducible error.</p>
 </section>
 <section id="inference" class="level3">
 <h3 class="anchored" data-anchor-id="inference">Inference</h3>
 <p>The goal of inference is not necessarily to make predictions for <span class="math inline">\(Y\)</span>, but to understand the association between <span class="math inline">\(Y\)</span> and its predictors <span class="math inline">\(X_1, \dots, X_p\)</span>. Therefore, we need to know the exact form of <span class="math inline">\(\hat{f}\)</span>.</p>
-<p>Key questions in inference: * Identify important predictors: Only a small subset of variables may meaningfully affect <span class="math inline">\(Y\)</span>. + Understand relationships: - Direction (positive or negative association) - Possible interactions with other predictors + Model form: Determine if a simple linear model is sufficient or if a more complex, nonlinear approach is needed.</p>
+<p>Key questions in inference:</p>
+<ul>
+<li>Identify important predictors: Only a small subset of variables may meaningfully affect <span class="math inline">\(Y\)</span>.
+<ul>
+<li>Understand relationships:
+<ul>
+<li>Direction (positive or negative association)</li>
+<li>Possible interactions with other predictors</li>
+</ul></li>
+<li>Model form
+<ul>
+<li>Determine if a simple linear model is sufficient or if a more complex, nonlinear approach is needed.</li>
+</ul></li>
+</ul></li>
+</ul>
 </section>
 <section id="prediction-and-inference-summary" class="level3">
 <h3 class="anchored" data-anchor-id="prediction-and-inference-summary">Prediction and Inference Summary</h3>
@@ -461,7 +486,12 @@ Y = \hat{f}(X)\]</span> where <span class="math inline">\(\hat{f}\)</span> is us
 <section id="the-trade-off-between-prediction-accuracy-and-model-interpretability" class="level2">
 <h2 class="anchored" data-anchor-id="the-trade-off-between-prediction-accuracy-and-model-interpretability">The Trade-Off Between Prediction Accuracy and Model Interpretability</h2>
 <p><img src="accuracyinterpretability.jpg" class="img-fluid"></p>
-<p>Statistical learning methods vary in flexibility - some, like linear regression, can model only simple relationships, while others, like splines, boosting, and neural networks, can capture highly complex patterns. * <strong>Less flexible methods</strong> (e.g.&nbsp;linear regression, lasso) are often preferred for <strong>inference</strong> because they are more interpretable * <strong>More flexible methods</strong> (e.g.&nbsp;Generalized Additive Models, boosting, neural networks) can model complex relationships but are harder to interpret * For <strong>prediction-focused tasks</strong>, flexibility can help but also risks <strong>overfitting</strong>, sometimes making less flexible models more accurate.</p>
+<p>Statistical learning methods vary in flexibility - some, like linear regression, can model only simple relationships, while others, like splines, boosting, and neural networks, can capture highly complex patterns.</p>
+<ul>
+<li><strong>Less flexible methods</strong> (e.g.&nbsp;linear regression, lasso) are often preferred for <strong>inference</strong> because they are more interpretable</li>
+<li><strong>More flexible methods</strong> (e.g.&nbsp;Generalized Additive Models, boosting, neural networks) can model complex relationships but are harder to interpret</li>
+<li>For <strong>prediction-focused tasks</strong>, flexibility can help but also risks <strong>overfitting</strong>, sometimes making less flexible models more accurate.</li>
+</ul>
 <p><strong><em>Choosing the right method involves balancing flexibility, interpretability, and risk of overfitting.</em></strong></p>
 </section>
 <section id="classifying-statistical-learning-problems-as" class="level2">
@@ -472,11 +502,18 @@ Y = \hat{f}(X)\]</span> where <span class="math inline">\(\hat{f}\)</span> is us
 </ul>
 <section id="supervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="supervised-learning">Supervised Learning</h3>
-<p>For this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference). Examples include: * Linear regression, Logistic regression * Generalized Additive Models, Boosting, Support Vector Machines</p>
+<p>For this domain, each observation or input has an associated response. The goal is to fit a model that relates the response to the predictors, with the hopes of accurately predicting the response (Prediction) or understanding the relationship between the predictor and the response (Inference). Examples include:</p>
+<ul>
+<li>Linear regression, Logistic regression</li>
+<li>Generalized Additive Models, Boosting, Support Vector Machines</li>
+</ul>
 </section>
 <section id="unsupervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="unsupervised-learning">Unsupervised Learning</h3>
-<p>Here, we observe a vector of measurements, but there is no associated response. In a way, there is no <em>north star</em>; in a way, we are working blind. We lack a response variable that <em>supervises</em> our model. We are only concerned about understanding the relationships between the given variables or observations. Examples include: * Cluster analysis, where we find structure or patterns among observations</p>
+<p>Here, we observe a vector of measurements, but there is no associated response. In a way, there is no <em>north star</em>; in a way, we are working blind. We lack a response variable that <em>supervises</em> our model. We are only concerned about understanding the relationships between the given variables or observations. Examples include:</p>
+<ul>
+<li>Cluster analysis, where we find structure or patterns among observations</li>
+</ul>
 <p><img src="clustering.jpg" class="img-fluid"></p>
 <p>Above is an example of a clustering analysis using two variables. The left plot shows that groups are well separated, while the right plot shows some overlapping clusters, making perfect assignments impossible. High dimensional data with many variables can also make visual inspection impractical - thus automated clustering methods are essential.</p>
 </section>
@@ -485,8 +522,8 @@ Y = \hat{f}(X)\]</span> where <span class="math inline">\(\hat{f}\)</span> is us
 <p>Sometimes, only part of the data set has both predictors and responses, while the rest has predictors only. This happens when predictors are cheap to collect but responses are costly. The goal then is to use methods that leverage both labeled and unlabeled data.</p>
 </section>
 </section>
-<section id="how-to-select-a-statistical-learning-method" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-select-a-statistical-learning-method">How to select a statistical learning method</h2>
+<section id="selecting-a-statistical-learning-method-in-supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-a-statistical-learning-method-in-supervised-learning">Selecting a statistical learning method in Supervised Learning</h2>
 <p>The type of <em>response variable</em> determines the nature of the problem: if the response is quantitative, it is treated as a regression task, whereas if the response is qualitative, it is addressed as a classification task. However, whether the <em>predictors</em> are qualitative or quantitative is generally considered less important.</p>
 <section id="regression-task" class="level3">
 <h3 class="anchored" data-anchor-id="regression-task">Regression task</h3>
