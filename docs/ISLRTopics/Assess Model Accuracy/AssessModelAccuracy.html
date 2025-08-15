@@ -408,7 +408,7 @@ window.Quarto = {
 <p>In statistical learning, there is no <em>single</em> method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result.</p>
 <section id="measure-the-quality-of-fit---mean-squared-error" class="level2">
 <h2 class="anchored" data-anchor-id="measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></h2>
-<p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
+<p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
 \]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response.</p>
 <p>The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an <em>unseen</em> variable that has not been used by the model for training. For example:</p>
@@ -461,6 +461,7 @@ Important
 <p>As model flexibility increases, the training MSE will decrease, but the test MSE may not. If this is the case, the statistical method is <strong><em>overfitting</em></strong> the data.</p>
 </div>
 </div>
+<p>Overfitting happens when the flexible model is working too hard to find patterns in our training data, not knowing that the patterns can be caused by random chance/error, the <span class="math inline">\(\epsilon\)</span>. When a less flexible model would have yielded a smaller test MSE, then we are definitely overfitting.</p>
 
 
 </section>
