@@ -2,7 +2,7 @@
 title: "How to Assess Model Accuracy"
 description: "My take on machine learning based on statistics"
 author: "Karl Marquez"
-date: 2025-08-11
+date: 2025-08-14
 categories:
   - machine learning
   - r
