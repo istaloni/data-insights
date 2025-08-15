@@ -19,9 +19,10 @@ execute:
 
 # What is statistical learning?
 
-The goal of statistical learning is to develop an accurate model that can be used to predict output based on inputs. Inputs can be referred to as *predictors*, *independent variable features*, or just *variables*. The output is often called the *response* or *dependent variable*.  
+The goal of statistical learning is to develop an accurate model that can be used to predict output based on inputs. Inputs can be referred to as *predictors*, *independent variable features*, or just *variables*. The output is often called the *response* or *dependent variable*.
 
 Loading packages and data set:
+
 ```{r}
 packages <- c("ISLR2", "tidyverse", "ggplot2", "gridExtra", "plotly",
               "scatterplot3d")
@@ -49,6 +50,7 @@ advertising <- read.csv("Advertising.csv")
 ```
 
 Using Advertising data set, shown is a scatterplot of three advertising methods (input) to sales (output).
+
 ```{r}
 #| fig-cap: "TV, radio, and newspaper seems to have a positive association to sales. The more the company spends on TV advertisement, the higher the associated sales. Newspaper seems to be the weakest advertising method."
 
@@ -70,11 +72,10 @@ grid.arrange(p1, p2, p3, ncol = 3)
 
 For the three plots above, I inserted a line that results in the least amount of errors (the space between points and the line, given fixed x). Some errors are positive (points above the line), and some errors are negative (points below the line). To resolve this, we square the errors (thus, the least squares fit).
 
-In a mathematical equation, it looks something like this:
-$$Y = f(X) + \epsilon$$
-Here, $f$ is a fixed function of inputs, and $\epsilon$ is a random error term, independent of the inputs. Overall, the errors have approximately a mean of zero. 
+In a mathematical equation, it looks something like this: $$Y = f(X) + \epsilon$$ Here, $f$ is a fixed function of inputs, and $\epsilon$ is a random error term, independent of the inputs. Overall, the errors have approximately a mean of zero.
 
 To visualize, see below's example:
+
 ```{r}
 #| fig-cap: "The blue curve represents the relationship between income and years of education."
 income1 <- read.csv("Income1.csv")
@@ -92,6 +93,7 @@ grid.arrange(incomeplot1, incomeplot2, ncol = 2)
 ```
 
 In the real world, the function $f$ depends on more than one input. Adding another variable (seniority), the relationship tracking income using Education and Seniority is now a plane, a two-dimensional data that is estimated based on the two variables observed.
+
 ```{r}
 #| fig-cap: "Surface plane represents relationship between income and years of education and senority"
 income2 <- read.csv("Income2.csv")
@@ -126,9 +128,6 @@ scatter3d$plane3d(model)
 
 ```
 
-As more inputs are involved and included in the model, the more complicated the function gets. 
+As more inputs are involved and included in the model, the more complicated the function gets.
 
-***In essence, statistical learning refers to approaches for estimating $f$, to attempt to predict $Y$.*** 
-
-
-
+***In essence, statistical learning refers to approaches for estimating*** $f$, to attempt to predict $Y$.

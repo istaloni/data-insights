@@ -16,11 +16,7 @@
     "listing": "/islr.html",
     "items": [
       "/ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html",
-      "/ISLRTopics/Regression vs Classification/RegressionClassification.html",
-      "/ISLRTopics/Estimating f Concepts and Considerations/estimatingfconcepts.html",
-      "/ISLRTopics/Supervised versus Unsupervised Learning/SupervisedUnsupervised.html",
       "/ISLRTopics/Why Estimate f/WhyEstimateF.html",
-      "/ISLRTopics/Accuracy vs Interpretability/AccuarcyVsInterpretability.html",
       "/ISLRTopics/Statistical Learning Intro/ISLRintro.html"
     ]
   },
