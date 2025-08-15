@@ -95,6 +95,35 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
@@ -327,7 +356,7 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#measure-the-quality-of-fit" id="toc-measure-the-quality-of-fit" class="nav-link active" data-scroll-target="#measure-the-quality-of-fit">Measure the Quality of Fit</a></li>
+  <li><a href="#measure-the-quality-of-fit---mean-squared-error" id="toc-measure-the-quality-of-fit---mean-squared-error" class="nav-link active" data-scroll-target="#measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></a></li>
   </ul>
 </nav>
     </div>
@@ -377,9 +406,11 @@ cookieconsent.run({
 
 
 <p>In statistical learning, there is no <em>single</em> method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result.</p>
-<section id="measure-the-quality-of-fit" class="level2">
-<h2 class="anchored" data-anchor-id="measure-the-quality-of-fit">Measure the Quality of Fit</h2>
-<p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation.</p>
+<section id="measure-the-quality-of-fit---mean-squared-error" class="level2">
+<h2 class="anchored" data-anchor-id="measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></h2>
+<p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
+\text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
+\]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation.</p>
 
 
 </section>
