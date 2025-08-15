@@ -411,7 +411,7 @@ window.Quarto = {
 <p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
 \]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response.</p>
-<p>The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we cannot use the same set of observations (the training data); rather we want to use an <em>unseen</em> variable that has not been used by the model for training. For example:</p>
+<p>The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an <em>unseen</em> variable that has not been used by the model for training. For example:</p>
 <ul>
 <li>We developed an algorithm to predict a stock price based on data from the past 6 months.
 <ul>
@@ -422,6 +422,15 @@ window.Quarto = {
 <ul>
 <li>We are not concerned how the model predicts diabetes risk for patients used to train the model (<em>training data</em>)</li>
 <li>We care about how the method accurately predicts diabetes risk for <em>future</em> patients (<em>test data</em>)</li>
+</ul></li>
+</ul>
+<p>If there are no test observations to evaluate the model, an option might be to just use the training data to minimize the training MSE, but this does not guarantee the lowest test MSE. To grasp the concept, see figure: <img src="testvstrainMSE.jpg" class="img-fluid"></p>
+<ul>
+<li>Left panel:
+<ul>
+<li>True <span class="math inline">\(f\)</span> is black</li>
+<li>Orange linear regression is inflexible, next is blue smoothing spline, and the most flexible is green smoothing spline</li>
+<li>Most flexible green spline is following the training data too closely, deviating away from the true <span class="math inline">\(f\)</span></li>
 </ul></li>
 </ul>
 

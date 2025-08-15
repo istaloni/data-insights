@@ -37,10 +37,24 @@ The MSE is computed using the existing training data that was used to fit the mo
   
 If there are no test observations to evaluate the model, an option might be to just use the training data to minimize the training MSE, but this does not guarantee the lowest test MSE. To grasp the concept, see figure: 
 ![](testvstrainMSE.jpg) 
+
 * Left panel: 
   + True $f$ is black
   + Orange linear regression is inflexible, next is blue smoothing spline, and the most flexible is green smoothing spline 
   + Most flexible green spline is following the training data too closely, deviating away from the true $f$ 
+* Right panel:
+  + Gray curve is **training MSE** as a function of flexibility
+    - Orange linear regression (less flexible) has highest training MSE (bad)
+    - Blue smoothing spline (middle flexibility) has middle MSE (good)
+    - Green smoothing spline (most flexible) has lowest training MSE (best)
+  + Red curve is **test MSE** as a function of flexibility
+    - Orange linear regression still has highest MSE (bad)
+    - Blue smoothing spline has the lowest MSE (best)
+    - Green smoothing spline, although the most flexible, has increased MSE 
+    
+::: {.callout-important}
+As model flexibility increases, the training MSE will decrease, but the test MSE may not. If this is the case, the statistical method is ***overfitting*** the data.
+:::
 
 
   
