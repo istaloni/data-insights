@@ -298,7 +298,7 @@
     "href": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html",
     "title": "How to Assess Model Accuracy",
     "section": "",
-    "text": "In statistical learning, there is no single method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result.\n\n\n\n Back to top"
+    "text": "In statistical learning, there is no single method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result."
   },
   {
     "objectID": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html#measure-the-quality-of-fit",
@@ -306,5 +306,12 @@
     "title": "How to Assess Model Accuracy",
     "section": "Measure the Quality of Fit",
     "text": "Measure the Quality of Fit\nWe need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation."
+  },
+  {
+    "objectID": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html#measure-the-quality-of-fit---mean-squared-error",
+    "href": "ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html#measure-the-quality-of-fit---mean-squared-error",
+    "title": "How to Assess Model Accuracy",
+    "section": "Measure the Quality of Fit - Mean Squared Error",
+    "text": "Measure the Quality of Fit - Mean Squared Error\nWe need to quantify to what extent does the model’s predicted response for a given observation is close to the true response for a given observation. In a regression setting, one method is the mean squared method (MSE), given by: \\[\n\\text{MSE} = \\frac{1}{n} \\sum_{i=1}^n \\left( y_i - \\hat{f}(x_i) \\right)^2\n\\] where \\(\\hat{f}(x_i)\\) is the prediction that \\(\\hat{f}\\) gives for the \\(i\\)th observation."
   }
 ]

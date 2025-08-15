@@ -19,5 +19,18 @@ execute:
 
 In statistical learning, there is no *single* method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result. 
 
-## Measure the Quality of Fit
-We need to quantify to what extent does the model's predicted response for a given observation is close to the true response for a given observation. 
+## Measure the Quality of Fit - *Mean Squared Error*
+We need to quantify to what extent does the model's predicted response for a given observation is close to the true response for a given observation. In a regression setting, one method is the mean squared method (MSE), given by:
+$$
+\text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
+$$
+where $\hat{f}(x_i)$ is the prediction that $\hat{f}$ gives for the $i$th observation. 
+
+
+
+
+
+
+
+
+
