@@ -57,3 +57,44 @@ As model flexibility increases, the training MSE will decrease, but the test MSE
 :::
 
 Overfitting happens when the flexible model is working too hard to find patterns in our training data, not knowing that the patterns can be caused by random chance/error, the $\epsilon$. When a less flexible model would have yielded a smaller test MSE, then we are definitely overfitting.
+
+## The Bias-Variance Trade-off
+The *test MSE* is the sum of three fundamental quantities: 
+
+* *Variance* of $\hat{f}(x_{0})$ 
+* Squared *bias* of $\hat{f}(x_{0})$ 
+* Variance of the error terms $\epsilon$ 
+
+In order to minimize the expected test error, we need to select a statistical learning method that simultaneously achieves *low variance* and *low bias*. 
+
+### The *Variance* of $\hat{f}(x_{0})$ 
+
+* Different training sets will result in a different $\hat{f}$ 
+* *Variance* refers to the amount by which $\hat{f}$ would change if we estimated it using a different training data set 
+  + High *variance* - small changes in training data set can result in large changes in $\hat{f}$ 
+    - In general, more flexible statistical methods have higher variance because it follows observations more closely 
+  + Low *variance* - small changes in training data set do not change $\hat{f}$ that much 
+    - In general, less flexible methods (least squares linear regression) have low variance 
+    
+### The *Bias* of $\hat{f}(x_{0})$ 
+
+* *Bias* refers to the error that is introduced by approximating a real-life problem by a simple model 
+  + High *bias* - when linear regression is used to explain a non-linear relationship between $Y$ and $X_{1}, X_{2}, \ldots, X_{p}$ 
+    - since true $f$ is non-linear, it does not matter how many training data set we are given; linear regression will not produce an accurate estimate 
+
+::: callout-important
+As we use more flexible methods, the *variance* will increase and the *bias* will decrease. When we increase flexibility, *bias* initially decrease faster than the increase in *variance*, which decreases our *test MSE* (what we want). But if we increase the flexibility too much, *bias* will not decrease much, and *variance* will increase a lot (not what we want).
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+

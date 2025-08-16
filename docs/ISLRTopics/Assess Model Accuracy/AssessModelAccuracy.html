@@ -357,6 +357,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#measure-the-quality-of-fit---mean-squared-error" id="toc-measure-the-quality-of-fit---mean-squared-error" class="nav-link active" data-scroll-target="#measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></a></li>
+  <li><a href="#the-bias-variance-trade-off" id="toc-the-bias-variance-trade-off" class="nav-link" data-scroll-target="#the-bias-variance-trade-off">The Bias-Variance Trade-off</a>
+  <ul class="collapse">
+  <li><a href="#the-variance-of-hatfx_0" id="toc-the-variance-of-hatfx_0" class="nav-link" data-scroll-target="#the-variance-of-hatfx_0">The <em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></a></li>
+  <li><a href="#the-bias-of-hatfx_0" id="toc-the-bias-of-hatfx_0" class="nav-link" data-scroll-target="#the-bias-of-hatfx_0">The <em>Bias</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -463,8 +468,60 @@ Important
 </div>
 </div>
 <p>Overfitting happens when the flexible model is working too hard to find patterns in our training data, not knowing that the patterns can be caused by random chance/error, the <span class="math inline">\(\epsilon\)</span>. When a less flexible model would have yielded a smaller test MSE, then we are definitely overfitting.</p>
+</section>
+<section id="the-bias-variance-trade-off" class="level2">
+<h2 class="anchored" data-anchor-id="the-bias-variance-trade-off">The Bias-Variance Trade-off</h2>
+<p>The <em>test MSE</em> is the sum of three fundamental quantities:</p>
+<ul>
+<li><em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></li>
+<li>Squared <em>bias</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></li>
+<li>Variance of the error terms <span class="math inline">\(\epsilon\)</span></li>
+</ul>
+<p>In order to minimize the expected test error, we need to select a statistical learning method that simultaneously achieves <em>low variance</em> and <em>low bias</em>.</p>
+<section id="the-variance-of-hatfx_0" class="level3">
+<h3 class="anchored" data-anchor-id="the-variance-of-hatfx_0">The <em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></h3>
+<ul>
+<li>Different training sets will result in a different <span class="math inline">\(\hat{f}\)</span></li>
+<li><em>Variance</em> refers to the amount by which <span class="math inline">\(\hat{f}\)</span> would change if we estimated it using a different training data set
+<ul>
+<li>High <em>variance</em> - small changes in training data set can result in large changes in <span class="math inline">\(\hat{f}\)</span>
+<ul>
+<li>In general, more flexible statistical methods have higher variance because it follows observations more closely</li>
+</ul></li>
+<li>Low <em>variance</em> - small changes in training data set do not change <span class="math inline">\(\hat{f}\)</span> that much
+<ul>
+<li>In general, less flexible methods (least squares linear regression) have low variance</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-bias-of-hatfx_0" class="level3">
+<h3 class="anchored" data-anchor-id="the-bias-of-hatfx_0">The <em>Bias</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></h3>
+<ul>
+<li><em>Bias</em> refers to the error that is introduced by approximating a real-life problem by a simple model
+<ul>
+<li>High <em>bias</em> - when linear regression is used to explain a non-linear relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X_{1}, X_{2}, \ldots, X_{p}\)</span>
+<ul>
+<li>since true <span class="math inline">\(f\)</span> is non-linear, it does not matter how many training data set we are given; linear regression will not produce an accurate estimate</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As we use more flexible methods, the <em>variance</em> will increase and the <em>bias</em> will decrease. As we increase flexibility, <em>bias</em> initially decrease faster than the increase in <em>variance</em>, which decreases our <em>test MSE</em>. But if we increase the flexibility much more, <em>bias</em> will not decrease much, and <em>variance</em> will increase a lot.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
