@@ -17,7 +17,7 @@ execute:
   warning: false
 ---
 
-# What is statistical learning?
+## What is statistical learning?
 
 The goal of statistical learning is to develop an accurate model that can be used to predict output based on inputs. Inputs can be referred to as *predictors*, *independent variable features*, or just *variables*. The output is often called the *response* or *dependent variable*.
 
