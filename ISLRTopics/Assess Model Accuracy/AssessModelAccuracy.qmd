@@ -3,6 +3,7 @@ title: "How to Assess Model Accuracy"
 description: "My take on machine learning based on statistics"
 author: "Karl Marquez"
 date: 2025-08-14
+date-modified: 2025-08-17
 categories:
   - machine learning
   - r
@@ -17,9 +18,11 @@ execute:
   warning: false
 ---
 
-In statistical learning, there is no *single* method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result.
+In statistical learning, there is no *single* method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, we need a way to evaluate the methods we use to produce the best result.
 
-## Measure the Quality of Fit - *Mean Squared Error*
+## Evaluating a Regression Model - Measuring the Quality of Fit 
+
+### *Mean Squared Error* and *Overfitting* 
 
 We need to quantify to what extent does the model's predicted response for a given observation is close to the true response. In a regression setting, one method is the mean squared method (MSE), given by: $$
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
@@ -27,10 +30,10 @@ $$ where $\hat{f}(x_i)$ is the prediction that $\hat{f}$ gives for the $i$th obs
 
 The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an *unseen* variable that has not been used by the model for training. For example:
 
--   We developed an algorithm to predict a stock price based on data from the past 6 months.
+-   Algorithm developed to predict a stock price based on data from the past 6 months.
     -   We do not really care how well the model predicts last week's stock price (*training data*)
     -   We care how the model predicts tomorrow's stock price (*test data*)
--   We developed an algorithm to predict diabetes risk based on previous patient's clinical measurements
+-   Algorithm developed to predict diabetes risk based on previous patient's clinical measurements
     -   We are not concerned how the model predicts diabetes risk for patients used to train the model (*training data*)
     -   We care about how the method accurately predicts diabetes risk for *future* patients (*test data*)
 
@@ -58,7 +61,7 @@ As model flexibility increases, the training MSE will decrease, but the test MSE
 
 Overfitting happens when the flexible model is working too hard to find patterns in our training data, not knowing that the patterns can be caused by random chance/error, the $\epsilon$. When a less flexible model would have yielded a smaller test MSE, then we are definitely overfitting.
 
-## The Bias-Variance Trade-off
+### The Bias-Variance Trade-off
 The *test MSE* is the sum of three fundamental quantities: 
 
 * *Variance* of $\hat{f}(x_{0})$ 
@@ -67,7 +70,7 @@ The *test MSE* is the sum of three fundamental quantities:
 
 In order to minimize the expected test error, we need to select a statistical learning method that simultaneously achieves *low variance* and *low bias*. 
 
-### The *Variance* of $\hat{f}(x_{0})$ 
+#### The *Variance* of $\hat{f}(x_{0})$ 
 
 * Different training sets will result in a different $\hat{f}$ 
 * *Variance* refers to the amount by which $\hat{f}$ would change if we estimated it using a different training data set 
@@ -76,7 +79,7 @@ In order to minimize the expected test error, we need to select a statistical le
   + Low *variance* - small changes in training data set do not change $\hat{f}$ that much 
     - In general, less flexible methods (least squares linear regression) have low variance 
     
-### The *Bias* of $\hat{f}(x_{0})$ 
+#### The *Bias* of $\hat{f}(x_{0})$ 
 
 * *Bias* refers to the error that is introduced by approximating a real-life problem by a simple model 
   + High *bias* - when linear regression is used to explain a non-linear relationship between $Y$ and $X_{1}, X_{2}, \ldots, X_{p}$ 
@@ -86,7 +89,20 @@ In order to minimize the expected test error, we need to select a statistical le
 As we use more flexible methods, the *variance* will increase and the *bias* will decrease. When we increase flexibility, *bias* initially decrease faster than the increase in *variance*, which decreases our *test MSE* (what we want). But if we increase the flexibility too much, *bias* will not decrease much, and *variance* will increase a lot (not what we want).
 :::
 
-
+![](biasvariance.jpg) 
+* Blue is bias, Orange is variance, dashed line is irreducible error $\epsilon$, and Red is MSE (the sum of the three lines) which we aim to minimize 
+* In the three figures, as you increase model flexibility, bias and variance change at different rates, resulting in a different optimal MSE 
+  + Left panel: 
+    - As model flexibility increase, bias sharply declines, with only a slight increase in variance 
+    - When flexibility increases more, variance sharply goes up, overfitting the data 
+    - We want to stop at flexibility is 5 
+  + Middle panel:
+    - As model flexibility increases, there's really not much decrease in bias, but variance goes up sharply 
+    - In this data set, we want model flexibility at the lowest (true $\hat{f}$ seems linear) 
+  + Right panel:
+    - As model flexibility increase, bias sharply declines 
+    - When flexibility increases more, variance does not increase much 
+    - In this data set, true $\hat{f}$ is non-linear, so we can increase the model flexibility 
 
 
 

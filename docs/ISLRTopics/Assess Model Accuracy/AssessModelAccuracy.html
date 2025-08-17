@@ -356,11 +356,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#measure-the-quality-of-fit---mean-squared-error" id="toc-measure-the-quality-of-fit---mean-squared-error" class="nav-link active" data-scroll-target="#measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></a></li>
-  <li><a href="#the-bias-variance-trade-off" id="toc-the-bias-variance-trade-off" class="nav-link" data-scroll-target="#the-bias-variance-trade-off">The Bias-Variance Trade-off</a>
+  <li><a href="#evaluating-a-regression-model---measuring-the-quality-of-fit" id="toc-evaluating-a-regression-model---measuring-the-quality-of-fit" class="nav-link active" data-scroll-target="#evaluating-a-regression-model---measuring-the-quality-of-fit">Evaluating a Regression Model - Measuring the Quality of Fit</a>
   <ul class="collapse">
-  <li><a href="#the-variance-of-hatfx_0" id="toc-the-variance-of-hatfx_0" class="nav-link" data-scroll-target="#the-variance-of-hatfx_0">The <em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></a></li>
-  <li><a href="#the-bias-of-hatfx_0" id="toc-the-bias-of-hatfx_0" class="nav-link" data-scroll-target="#the-bias-of-hatfx_0">The <em>Bias</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></a></li>
+  <li><a href="#mean-squared-error-and-overfitting" id="toc-mean-squared-error-and-overfitting" class="nav-link" data-scroll-target="#mean-squared-error-and-overfitting"><em>Mean Squared Error</em> and <em>Overfitting</em></a></li>
+  <li><a href="#the-bias-variance-trade-off" id="toc-the-bias-variance-trade-off" class="nav-link" data-scroll-target="#the-bias-variance-trade-off">The Bias-Variance Trade-off</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -410,20 +409,22 @@ window.Quarto = {
 </header>
 
 
-<p>In statistical learning, there is no <em>single</em> method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, for a particular data set, we need a way to evaluate the methods we use to produce the best result.</p>
-<section id="measure-the-quality-of-fit---mean-squared-error" class="level2">
-<h2 class="anchored" data-anchor-id="measure-the-quality-of-fit---mean-squared-error">Measure the Quality of Fit - <em>Mean Squared Error</em></h2>
+<p>In statistical learning, there is no <em>single</em> method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, we need a way to evaluate the methods we use to produce the best result.</p>
+<section id="evaluating-a-regression-model---measuring-the-quality-of-fit" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-a-regression-model---measuring-the-quality-of-fit">Evaluating a Regression Model - Measuring the Quality of Fit</h2>
+<section id="mean-squared-error-and-overfitting" class="level3">
+<h3 class="anchored" data-anchor-id="mean-squared-error-and-overfitting"><em>Mean Squared Error</em> and <em>Overfitting</em></h3>
 <p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
 \]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response.</p>
 <p>The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an <em>unseen</em> variable that has not been used by the model for training. For example:</p>
 <ul>
-<li>We developed an algorithm to predict a stock price based on data from the past 6 months.
+<li>Algorithm developed to predict a stock price based on data from the past 6 months.
 <ul>
 <li>We do not really care how well the model predicts last week’s stock price (<em>training data</em>)</li>
 <li>We care how the model predicts tomorrow’s stock price (<em>test data</em>)</li>
 </ul></li>
-<li>We developed an algorithm to predict diabetes risk based on previous patient’s clinical measurements
+<li>Algorithm developed to predict diabetes risk based on previous patient’s clinical measurements
 <ul>
 <li>We are not concerned how the model predicts diabetes risk for patients used to train the model (<em>training data</em>)</li>
 <li>We care about how the method accurately predicts diabetes risk for <em>future</em> patients (<em>test data</em>)</li>
@@ -469,8 +470,8 @@ Important
 </div>
 <p>Overfitting happens when the flexible model is working too hard to find patterns in our training data, not knowing that the patterns can be caused by random chance/error, the <span class="math inline">\(\epsilon\)</span>. When a less flexible model would have yielded a smaller test MSE, then we are definitely overfitting.</p>
 </section>
-<section id="the-bias-variance-trade-off" class="level2">
-<h2 class="anchored" data-anchor-id="the-bias-variance-trade-off">The Bias-Variance Trade-off</h2>
+<section id="the-bias-variance-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="the-bias-variance-trade-off">The Bias-Variance Trade-off</h3>
 <p>The <em>test MSE</em> is the sum of three fundamental quantities:</p>
 <ul>
 <li><em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></li>
@@ -478,8 +479,8 @@ Important
 <li>Variance of the error terms <span class="math inline">\(\epsilon\)</span></li>
 </ul>
 <p>In order to minimize the expected test error, we need to select a statistical learning method that simultaneously achieves <em>low variance</em> and <em>low bias</em>.</p>
-<section id="the-variance-of-hatfx_0" class="level3">
-<h3 class="anchored" data-anchor-id="the-variance-of-hatfx_0">The <em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></h3>
+<section id="the-variance-of-hatfx_0" class="level4">
+<h4 class="anchored" data-anchor-id="the-variance-of-hatfx_0">The <em>Variance</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></h4>
 <ul>
 <li>Different training sets will result in a different <span class="math inline">\(\hat{f}\)</span></li>
 <li><em>Variance</em> refers to the amount by which <span class="math inline">\(\hat{f}\)</span> would change if we estimated it using a different training data set
@@ -495,8 +496,8 @@ Important
 </ul></li>
 </ul>
 </section>
-<section id="the-bias-of-hatfx_0" class="level3">
-<h3 class="anchored" data-anchor-id="the-bias-of-hatfx_0">The <em>Bias</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></h3>
+<section id="the-bias-of-hatfx_0" class="level4">
+<h4 class="anchored" data-anchor-id="the-bias-of-hatfx_0">The <em>Bias</em> of <span class="math inline">\(\hat{f}(x_{0})\)</span></h4>
 <ul>
 <li><em>Bias</em> refers to the error that is introduced by approximating a real-life problem by a simple model
 <ul>
@@ -516,11 +517,12 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As we use more flexible methods, the <em>variance</em> will increase and the <em>bias</em> will decrease. As we increase flexibility, <em>bias</em> initially decrease faster than the increase in <em>variance</em>, which decreases our <em>test MSE</em>. But if we increase the flexibility much more, <em>bias</em> will not decrease much, and <em>variance</em> will increase a lot.</p>
+<p>As we use more flexible methods, the <em>variance</em> will increase and the <em>bias</em> will decrease. When we increase flexibility, <em>bias</em> initially decrease faster than the increase in <em>variance</em>, which decreases our <em>test MSE</em> (what we want). But if we increase the flexibility too much, <em>bias</em> will not decrease much, and <em>variance</em> will increase a lot (not what we want).</p>
 </div>
 </div>
 
 
+</section>
 </section>
 </section>
 
