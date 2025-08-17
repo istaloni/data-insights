@@ -90,19 +90,22 @@ As we use more flexible methods, the *variance* will increase and the *bias* wil
 :::
 
 ![](biasvariance.jpg) 
+
 * Blue is bias, Orange is variance, dashed line is irreducible error $\epsilon$, and Red is MSE (the sum of the three lines) which we aim to minimize 
 * In the three figures, as you increase model flexibility, bias and variance change at different rates, resulting in a different optimal MSE 
   + Left panel: 
-    - As model flexibility increase, bias sharply declines, with only a slight increase in variance 
-    - When flexibility increases more, variance sharply goes up, overfitting the data 
+    - As model flexibility increase, bias sharply declines, with only a slight increase in variance (good) 
+    - When flexibility increases more, variance sharply goes up, overfitting the data (bad) 
     - We want to stop at flexibility is 5 
   + Middle panel:
-    - As model flexibility increases, there's really not much decrease in bias, but variance goes up sharply 
+    - As model flexibility increases, there's really not much decrease in bias, but variance goes up sharply (bad) 
     - In this data set, we want model flexibility at the lowest (true $\hat{f}$ seems linear) 
   + Right panel:
-    - As model flexibility increase, bias sharply declines 
-    - When flexibility increases more, variance does not increase much 
+    - As model flexibility increase, bias sharply declines (good)
+    - When flexibility increases more, variance does not increase much (good)
     - In this data set, true $\hat{f}$ is non-linear, so we can increase the model flexibility 
+    
+***The bias-variance trade-off challenge lies in finding the method flexibility for which both the variance and bias are the lowest, to minimize MSE.***
 
 
 

@@ -401,6 +401,12 @@ window.Quarto = {
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 17, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -520,6 +526,31 @@ Important
 <p>As we use more flexible methods, the <em>variance</em> will increase and the <em>bias</em> will decrease. When we increase flexibility, <em>bias</em> initially decrease faster than the increase in <em>variance</em>, which decreases our <em>test MSE</em> (what we want). But if we increase the flexibility too much, <em>bias</em> will not decrease much, and <em>variance</em> will increase a lot (not what we want).</p>
 </div>
 </div>
+<p><img src="biasvariance.jpg" class="img-fluid"></p>
+<ul>
+<li>Blue is bias, Orange is variance, dashed line is irreducible error <span class="math inline">\(\epsilon\)</span>, and Red is MSE (the sum of the three lines) which we aim to minimize</li>
+<li>In the three figures, as you increase model flexibility, bias and variance change at different rates, resulting in a different optimal MSE
+<ul>
+<li>Left panel:
+<ul>
+<li>As model flexibility increase, bias sharply declines, with only a slight increase in variance (good)</li>
+<li>When flexibility increases more, variance sharply goes up, overfitting the data (bad)</li>
+<li>We want to stop at flexibility is 5</li>
+</ul></li>
+<li>Middle panel:
+<ul>
+<li>As model flexibility increases, there’s really not much decrease in bias, but variance goes up sharply (bad)</li>
+<li>In this data set, we want model flexibility at the lowest (true <span class="math inline">\(\hat{f}\)</span> seems linear)</li>
+</ul></li>
+<li>Right panel:
+<ul>
+<li>As model flexibility increase, bias sharply declines (good)</li>
+<li>When flexibility increases more, variance does not increase much (good)</li>
+<li>In this data set, true <span class="math inline">\(\hat{f}\)</span> is non-linear, so we can increase the model flexibility</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong><em>The bias-variance trade-off challenge lies in finding the method flexibility for which both the variance and bias are the lowest, to minimize MSE.</em></strong></p>
 
 
 </section>
