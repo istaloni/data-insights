@@ -356,10 +356,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#evaluating-a-regression-model---measuring-the-quality-of-fit" id="toc-evaluating-a-regression-model---measuring-the-quality-of-fit" class="nav-link active" data-scroll-target="#evaluating-a-regression-model---measuring-the-quality-of-fit">Evaluating a Regression Model - Measuring the Quality of Fit</a>
+  <li><a href="#evaluating-a-regression-model" id="toc-evaluating-a-regression-model" class="nav-link active" data-scroll-target="#evaluating-a-regression-model">Evaluating a Regression Model</a>
   <ul class="collapse">
   <li><a href="#mean-squared-error-and-overfitting" id="toc-mean-squared-error-and-overfitting" class="nav-link" data-scroll-target="#mean-squared-error-and-overfitting"><em>Mean Squared Error</em> and <em>Overfitting</em></a></li>
   <li><a href="#the-bias-variance-trade-off" id="toc-the-bias-variance-trade-off" class="nav-link" data-scroll-target="#the-bias-variance-trade-off">The Bias-Variance Trade-off</a></li>
+  </ul></li>
+  <li><a href="#evaluating-a-classification-model" id="toc-evaluating-a-classification-model" class="nav-link" data-scroll-target="#evaluating-a-classification-model">Evaluating a Classification Model</a>
+  <ul class="collapse">
+  <li><a href="#training-error-rate" id="toc-training-error-rate" class="nav-link" data-scroll-target="#training-error-rate">Training <em>error rate</em></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -416,11 +420,12 @@ window.Quarto = {
 
 
 <p>In statistical learning, there is no <em>single</em> method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, we need a way to evaluate the methods we use to produce the best result.</p>
-<section id="evaluating-a-regression-model---measuring-the-quality-of-fit" class="level2">
-<h2 class="anchored" data-anchor-id="evaluating-a-regression-model---measuring-the-quality-of-fit">Evaluating a Regression Model - Measuring the Quality of Fit</h2>
+<section id="evaluating-a-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-a-regression-model">Evaluating a Regression Model</h2>
+<p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response.</p>
 <section id="mean-squared-error-and-overfitting" class="level3">
 <h3 class="anchored" data-anchor-id="mean-squared-error-and-overfitting"><em>Mean Squared Error</em> and <em>Overfitting</em></h3>
-<p>We need to quantify to what extent does the model’s predicted response for a given observation is close to the true response. In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
+<p>In a regression setting, one method is the mean squared method (MSE), given by: <span class="math display">\[
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
 \]</span> where <span class="math inline">\(\hat{f}(x_i)\)</span> is the prediction that <span class="math inline">\(\hat{f}\)</span> gives for the <span class="math inline">\(i\)</span>th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response.</p>
 <p>The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an <em>unseen</em> variable that has not been used by the model for training. For example:</p>
@@ -551,9 +556,20 @@ Important
 </ul></li>
 </ul>
 <p><strong><em>The bias-variance trade-off challenge lies in finding the method flexibility for which both the variance and bias are the lowest, to minimize MSE.</em></strong></p>
-
-
 </section>
+</section>
+</section>
+<section id="evaluating-a-classification-model" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-a-classification-model">Evaluating a Classification Model</h2>
+<p>The concepts of regression MSE discussed above can be transferred over to the classification setting with only minor modifications.</p>
+<section id="training-error-rate" class="level3">
+<h3 class="anchored" data-anchor-id="training-error-rate">Training <em>error rate</em></h3>
+<p>The error rate is the proportion of mistakes that are made if we apply our estimate <span class="math inline">\(\hat{f}\)</span> to the training observations, given by <span class="math display">\[
+\frac{1}{n} \sum_{i=1}^{n} I(y_i \neq \hat{y}_i)
+\]</span> where <span class="math inline">\(\hat{y}_i\)</span> is the predicted class label for the <em>i</em>th observation using <span class="math inline">\(\hat{f}\)</span>, and <span class="math inline">\(I(y_i \neq \hat{y}_i)\)</span> is an <em>indicator variable</em> that equals 1 if <span class="math inline">\(y_i \neq \hat{y}_i\)</span> and zero if <span class="math inline">\(y_i = \hat{y}_i\)</span>.</p>
+<p>The equation above is referred to the <em>training error rate</em> since it is computed based on the training data. But like the regression setting, we are more interested in the <em>test error rate</em>. A good classifier model minimizes the <em>test error rate</em>.</p>
+
+
 </section>
 </section>
 

@@ -20,13 +20,17 @@ execute:
 
 In statistical learning, there is no *single* method that dominates all others over all possible data sets. One method might be the best for a particular data set, but some other method may work better on a different one. Therefore, we need a way to evaluate the methods we use to produce the best result.
 
-## Evaluating a Regression Model - Measuring the Quality of Fit 
+## Evaluating a Regression Model  
+
+We need to quantify to what extent does the model's predicted response for a given observation is close to the true response. 
 
 ### *Mean Squared Error* and *Overfitting* 
 
-We need to quantify to what extent does the model's predicted response for a given observation is close to the true response. In a regression setting, one method is the mean squared method (MSE), given by: $$
+In a regression setting, one method is the mean squared method (MSE), given by: 
+$$
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n \left( y_i - \hat{f}(x_i) \right)^2
-$$ where $\hat{f}(x_i)$ is the prediction that $\hat{f}$ gives for the $i$th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response.
+$$ 
+where $\hat{f}(x_i)$ is the prediction that $\hat{f}$ gives for the $i$th observation. The lower the MSE, the more accurate the model will be. This makes sense because the bigger the difference between the predicted and actual response (we square the difference to eliminate the negative values then we add everything), the more the model deviates away from the true response. 
 
 The MSE is computed using the existing training data that was used to fit the model. To evaluate the MSE, we want to use an *unseen* variable that has not been used by the model for training. For example:
 
@@ -106,6 +110,19 @@ As we use more flexible methods, the *variance* will increase and the *bias* wil
     - In this data set, true $\hat{f}$ is non-linear, so we can increase the model flexibility 
     
 ***The bias-variance trade-off challenge lies in finding the method flexibility for which both the variance and bias are the lowest, to minimize MSE.***
+
+## Evaluating a Classification Model 
+The concepts of regression MSE discussed above can be transferred over to the classification setting with only minor modifications. 
+
+### Training *error rate* 
+
+The error rate is the proportion of mistakes that are made if we apply our estimate $\hat{f}$ to the training observations, given by 
+$$
+\frac{1}{n} \sum_{i=1}^{n} I(y_i \neq \hat{y}_i)
+$$
+where $\hat{y}_i$ is the predicted class label for the *i*th observation using $\hat{f}$, and $I(y_i \neq \hat{y}_i)$ is an *indicator variable* that equals 1 if $y_i \neq \hat{y}_i$ and zero if $y_i = \hat{y}_i$. 
+
+The equation above is referred to the *training error rate* since it is computed based on the training data. But like the regression setting, we are more interested in the *test error rate*. A good classifier model minimizes the *test error rate*. 
 
 
 
