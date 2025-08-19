@@ -116,13 +116,26 @@ The concepts of regression MSE discussed above can be transferred over to the cl
 
 ### Training *error rate* 
 
-The error rate is the proportion of mistakes that are made if we apply our estimate $\hat{f}$ to the training observations, given by 
+The error rate is the *proportion of mistakes* that are made if we apply our estimate $\hat{f}$ to the training observations, given by 
 $$
 \frac{1}{n} \sum_{i=1}^{n} I(y_i \neq \hat{y}_i)
 $$
 where $\hat{y}_i$ is the predicted class label for the *i*th observation using $\hat{f}$, and $I(y_i \neq \hat{y}_i)$ is an *indicator variable* that equals 1 if $y_i \neq \hat{y}_i$ and zero if $y_i = \hat{y}_i$. 
 
 The equation above is referred to the *training error rate* since it is computed based on the training data. But like the regression setting, we are more interested in the *test error rate*. A good classifier model minimizes the *test error rate*. 
+
+### The Bayes Classifier 
+The Bayes classifier assigns each observation to the most likely class given its predictor values, by assigning a test observation with predictor vector $x_0$ to the class $j$ for which 
+$$
+Pr(Y = j \mid X = x_0)
+$$
+is largest. This *Bayes classifier* equation describes the probability that $Y = j$, given the observed predictor vector $x_0$. Put simply, if $Pr(Y = j \mid X = x_0)$ > 0.5, then the equation predicts class one, and class two otherwise. For example, see figure: 
+
+![](bayes.jpg)
+* Simulated data in 2D consisting of predictors $X_1$ and $X_2$ 
+* For each value of $X_1$ and $X_2$, there is probability of response being blue or orange 
+* Orange region reflects set of points for which $\Pr(Y = \text{orange} \mid X)$ is greater than 50% (Blue if less than 50%) 
+* Purple dashed line is *Bayes decision boundary*, where probability is exactly 50%
 
 
 

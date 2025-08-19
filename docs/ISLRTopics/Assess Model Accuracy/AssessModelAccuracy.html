@@ -364,6 +364,7 @@ window.Quarto = {
   <li><a href="#evaluating-a-classification-model" id="toc-evaluating-a-classification-model" class="nav-link" data-scroll-target="#evaluating-a-classification-model">Evaluating a Classification Model</a>
   <ul class="collapse">
   <li><a href="#training-error-rate" id="toc-training-error-rate" class="nav-link" data-scroll-target="#training-error-rate">Training <em>error rate</em></a></li>
+  <li><a href="#the-bayes-classifier" id="toc-the-bayes-classifier" class="nav-link" data-scroll-target="#the-bayes-classifier">The Bayes Classifier</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -564,10 +565,16 @@ Important
 <p>The concepts of regression MSE discussed above can be transferred over to the classification setting with only minor modifications.</p>
 <section id="training-error-rate" class="level3">
 <h3 class="anchored" data-anchor-id="training-error-rate">Training <em>error rate</em></h3>
-<p>The error rate is the proportion of mistakes that are made if we apply our estimate <span class="math inline">\(\hat{f}\)</span> to the training observations, given by <span class="math display">\[
+<p>The error rate is the <em>proportion of mistakes</em> that are made if we apply our estimate <span class="math inline">\(\hat{f}\)</span> to the training observations, given by <span class="math display">\[
 \frac{1}{n} \sum_{i=1}^{n} I(y_i \neq \hat{y}_i)
 \]</span> where <span class="math inline">\(\hat{y}_i\)</span> is the predicted class label for the <em>i</em>th observation using <span class="math inline">\(\hat{f}\)</span>, and <span class="math inline">\(I(y_i \neq \hat{y}_i)\)</span> is an <em>indicator variable</em> that equals 1 if <span class="math inline">\(y_i \neq \hat{y}_i\)</span> and zero if <span class="math inline">\(y_i = \hat{y}_i\)</span>.</p>
 <p>The equation above is referred to the <em>training error rate</em> since it is computed based on the training data. But like the regression setting, we are more interested in the <em>test error rate</em>. A good classifier model minimizes the <em>test error rate</em>.</p>
+</section>
+<section id="the-bayes-classifier" class="level3">
+<h3 class="anchored" data-anchor-id="the-bayes-classifier">The Bayes Classifier</h3>
+<p>The Bayes classifier assigns each observation to the most likely class given its predictor values, by assigning a test observation with predictor vector <span class="math inline">\(x_0\)</span> to the class <span class="math inline">\(j\)</span> for which <span class="math display">\[
+Pr(Y = j \mid X = x_0)
+\]</span> is largest. This <em>Bayes classifier</em> equation describes the probability that <span class="math inline">\(Y = j\)</span>, given the observed predictor vector <span class="math inline">\(x_0\)</span>. Put simply, if <span class="math inline">\(Pr(Y = j \mid X = x_0)\)</span> &gt; 0.5, then the equation predicts class one, and class two otherwise.</p>
 
 
 </section>
