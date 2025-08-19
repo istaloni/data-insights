@@ -132,6 +132,7 @@ $$
 is largest. This *Bayes classifier* equation describes the probability that $Y = j$, given the observed predictor vector $x_0$. Put simply, if $Pr(Y = j \mid X = x_0)$ > 0.5, then the equation predicts class one, and class two otherwise. For example, see figure: 
 
 ![](bayes.jpg)
+
 * Simulated data in 2D consisting of predictors $X_1$ and $X_2$ 
 * For each value of $X_1$ and $X_2$, there is probability of response being blue or orange 
 * Orange region reflects set of points for which $\Pr(Y = \text{orange} \mid X)$ is greater than 50% (Blue if less than 50%) 

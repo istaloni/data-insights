@@ -574,7 +574,14 @@ Important
 <h3 class="anchored" data-anchor-id="the-bayes-classifier">The Bayes Classifier</h3>
 <p>The Bayes classifier assigns each observation to the most likely class given its predictor values, by assigning a test observation with predictor vector <span class="math inline">\(x_0\)</span> to the class <span class="math inline">\(j\)</span> for which <span class="math display">\[
 Pr(Y = j \mid X = x_0)
-\]</span> is largest. This <em>Bayes classifier</em> equation describes the probability that <span class="math inline">\(Y = j\)</span>, given the observed predictor vector <span class="math inline">\(x_0\)</span>. Put simply, if <span class="math inline">\(Pr(Y = j \mid X = x_0)\)</span> &gt; 0.5, then the equation predicts class one, and class two otherwise.</p>
+\]</span> is largest. This <em>Bayes classifier</em> equation describes the probability that <span class="math inline">\(Y = j\)</span>, given the observed predictor vector <span class="math inline">\(x_0\)</span>. Put simply, if <span class="math inline">\(Pr(Y = j \mid X = x_0)\)</span> &gt; 0.5, then the equation predicts class one, and class two otherwise. For example, see figure:</p>
+<p><img src="bayes.jpg" class="img-fluid"></p>
+<ul>
+<li>Simulated data in 2D consisting of predictors <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span></li>
+<li>For each value of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, there is probability of response being blue or orange</li>
+<li>Orange region reflects set of points for which <span class="math inline">\(\Pr(Y = \text{orange} \mid X)\)</span> is greater than 50% (Blue if less than 50%)</li>
+<li>Purple dashed line is <em>Bayes decision boundary</em>, where probability is exactly 50%</li>
+</ul>
 
 
 </section>
