@@ -606,6 +606,40 @@ Pr(Y = j \mid X = x_0)
 <li>We applied KNN classifier method with <span class="math inline">\(K\)</span> = 3 at all possible values for <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, and marked the decision boundary</li>
 </ul></li>
 </ul>
+<p>We can increase <span class="math inline">\(K\)</span> to produce a method that closely approaches the Bayes classifier. See KNN decision boundary of a larger data set with <span class="math inline">\(K\)</span> = 10:</p>
+<p><img src="knn1.jpg" class="img-fluid"></p>
+<ul>
+<li>Black curve: KNN decision boundary at <span class="math inline">\(K\)</span> = 10</li>
+<li>Purple dashed line: Bayes decision boundary</li>
+</ul>
+<p>At the extremes where <span class="math inline">\(K\)</span> is low and high, see below: <img src="knn2.jpg" class="img-fluid"></p>
+<ul>
+<li>Left figure:
+<ul>
+<li><span class="math inline">\(K\)</span> = 1, KNN decision boundary is overly flexible, finds patterns in data that do not correspond to Bayes decision boundary</li>
+<li>Low bias, High variance</li>
+</ul></li>
+<li>Right figure:
+<ul>
+<li><span class="math inline">\(K\)</span> = 100, KNN decision boundary is less flexible, produces a decision boundary that is close to linear</li>
+<li>High bias, Low variance</li>
+</ul></li>
+</ul>
+<p>As we decrease <span class="math inline">\(K\)</span>, the method becomes more flexible, and training error rate decreases. However, like in the regression setting, the test error rate increases at the end if we use a very flexible model, signaling overfitting. This is elaborated in this figure: <img src="knn3.jpg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As we use more flexible classification methods, training error rate will decline but the test error rate may not.</p>
+</div>
+</div>
+<p><strong><em>In both the regression and classification settings, choosing the correct level of flexibility is critical to the success of any statistical learning method.</em></strong></p>
 
 
 </section>

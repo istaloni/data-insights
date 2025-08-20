@@ -173,8 +173,15 @@ At the extremes where $K$ is low and high, see below:
 * Right figure: 
   + $K$ = 100, KNN decision boundary is less flexible, produces a decision boundary that is close to linear 
   + High bias, Low variance 
+  
+As we decrease $K$, the method becomes more flexible, and training error rate decreases. However, like in the regression setting, the test error rate increases at the end if we use a very flexible model, signaling overfitting. This is elaborated in this figure: 
+![](knn3.jpg)
+  
+::: callout-important
+As we use more flexible classification methods, training error rate will decline but the test error rate may not. 
+:::
 
-
+***In both the regression and classification settings, choosing the correct level of flexibility is critical to the success of any statistical learning method.***
 
 
 
