@@ -67,14 +67,42 @@ grid.arrange(p1, p2, p3, ncol = 3)
 ```
 
 Some questions that linear regression can answer: 
+
 1. Is there a relationship between advertising budget and sales? 
 2. How strong is the relationship between advertising budget and sales?  
 3. Which media are associated with sales? 
 4. How large is the association between each medium and sales? 
 5. How accurately can we predict future sales? 
+6. Is the relationship linear? 
+7. Is there synergy among the advertising media? 
 
+## Simple Linear Regression 
+It is a method of predicting a quantitative $Y$ on the basis of a single predictor variable $X$, assuming the relationship between $X$ and $Y$ is linear. It is given by the equation 
+$$
+Y \approx \beta_0 + \beta_1 X
+$$
+In our advertising data set, $Y$ is sales, and $X$ can be TV. We can regress sales onto TV by fitting the model 
+$$
+\text{sales} \approx \beta_0 + \beta_1 \times \text{TV}
+$$
+Here, the unknown constants, or coefficient parameters, are $\beta_0$ (*intercept*) and $\beta_1$ (*slope*). We estimate these numbers using the training data set. Once we have the coefficients, we can predict future sales using the same equation 
+$$
+\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x
+$$
+The *hat* symbol, ^, is the estimated value for an unknown parameter, coefficient, or predicted response. 
 
+### Estimating the Coefficients 
+The question is how do we calculate the coefficient parameters using the training data set? We want to find the $\beta_0$ (*intercept*) and $\beta_1$ (*slope*) such that the resulting line is as close as possible to the data points. How do we measure this *closeness*? The most common approach is the *least squares* criterion. To illustrate, see below:
+```{r}
+advertising <- advertising %>% 
+  mutate(res = residuals(loess(sales ~ TV)))
+ggplot(data = advertising, aes(x = TV, y = sales)) +
+  geom_point(alpha = 0.75, size = 2.5, color = "steelblue") +
+  geom_smooth(method = lm, color = "blue") +
+  geom_segment(aes(xend = TV, yend = sales - res), color = "red", alpha = 0.75) +
+  karl_theme
 
+```
 
 
 
