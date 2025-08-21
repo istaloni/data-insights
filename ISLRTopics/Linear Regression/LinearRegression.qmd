@@ -1,0 +1,85 @@
+---
+title: "Linear Regression: Basics"
+description: "My take on machine learning based on statistics"
+author: "Karl Marquez"
+date: 2025-08-20
+categories:
+  - machine learning
+  - r
+  - statistics
+format: 
+  html: 
+    code-fold: true
+    code-summary: "Show me the code"
+    code-overflow: wrap
+    css: styles.css
+execute: 
+  warning: false
+---
+
+To tackle linear regression, let's set up the environment and upload the data advertising data set: 
+
+```{r}
+packages <- c("ISLR2", "tidyverse", "ggplot2", "gridExtra", "plotly",
+              "scatterplot3d")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+invisible(lapply(packages, library, character.only = TRUE))
+
+library(tidyverse)
+library(ISLR2)
+library(ggplot2)
+library(gridExtra)
+library(plotly)
+library(scatterplot3d)
+
+karl_theme <- theme_bw() +
+  theme(plot.title = element_text(size=20),
+        axis.title = element_text(size = 15),
+        axis.text = element_text(size = 12),
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=12))
+
+advertising <- read.csv("Advertising.csv")
+```
+
+Using Advertising data set, shown is a scatterplot of three advertising methods (input) to sales (output).
+
+```{r}
+#| fig-cap: "TV, radio, and newspaper seems to have a positive association to sales. The more the company spends on TV advertisement, the higher the associated sales. Newspaper seems to be the weakest advertising method."
+
+p1 <- ggplot(data = advertising, aes(x = TV, y = sales)) +
+        geom_point(alpha = 0.75, size = 2, color = "steelblue") +
+        geom_smooth(method = "lm") +
+        karl_theme
+p2 <- ggplot(data = advertising, aes(x = radio, y = sales)) +
+        geom_point(alpha = 0.75, size = 2, color = "steelblue") +
+        geom_smooth(method = "lm") +
+        karl_theme
+p3 <- ggplot(data = advertising, aes(x = newspaper, y = sales)) +
+        geom_point(alpha = 0.75, size = 2, color = "steelblue") +
+        geom_smooth(method = "lm") +
+        karl_theme
+grid.arrange(p1, p2, p3, ncol = 3)
+
+```
+
+Some questions that linear regression can answer: 
+1. Is there a relationship between advertising budget and sales? 
+2. How strong is the relationship between advertising budget and sales?  
+3. Which media are associated with sales? 
+4. How large is the association between each medium and sales? 
+5. How accurately can we predict future sales? 
+
+
+
+
+
+
+
+
+
+
+

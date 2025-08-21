@@ -15,6 +15,7 @@
   {
     "listing": "/islr.html",
     "items": [
+      "/ISLRTopics/Linear Regression/LinearRegression.html",
       "/ISLRTopics/Assess Model Accuracy/AssessModelAccuracy.html",
       "/ISLRTopics/Why Estimate f/WhyEstimateF.html",
       "/ISLRTopics/Statistical Learning Intro/ISLRintro.html"
