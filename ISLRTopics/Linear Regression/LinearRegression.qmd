@@ -101,9 +101,12 @@ ggplot(data = advertising, aes(x = TV, y = sales)) +
   geom_smooth(method = lm, color = "blue") +
   geom_segment(aes(xend = TV, yend = sales - res), color = "red", alpha = 0.75) +
   karl_theme
-
 ```
-
+The residual, $e_i$, is $e_i = y_i - \hat{y}_i$, which is the difference between the $i$th observed response value and the $i$th response value predicted by the linear model. The *residual sum of squares* (RSS) is then 
+$$
+RSS = e_1^2 + e_2^2 + \cdots + e_n^2
+$$
+The figure above displays the linear regression fit to the **Advertising** data, where $\beta_0$ = 7.03 and $\beta_1$ = 0.0475. In simple words, an additional $1,000 spent on TV advertising is associated with selling approxiamtely 47.5 units of the product. 
 
 
 
