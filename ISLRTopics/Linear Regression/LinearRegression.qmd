@@ -108,6 +108,29 @@ RSS = e_1^2 + e_2^2 + \cdots + e_n^2
 $$
 The figure above displays the linear regression fit to the **Advertising** data, where $\beta_0$ = 7.03 and $\beta_1$ = 0.0475. In simple words, an additional $1,000 spent on TV advertising is associated with selling approxiamtely 47.5 units of the product. 
 
+### Assessing the Accuracy of Coefficients 
+The *true* relationship between *X* and *Y* is 
+$$
+Y = f(X) + \epsilon
+$$
+If $f(X)$ is approximated to be linear, then the relationship is 
+$$
+Y = \beta_0 + \beta_1 X + \epsilon
+$$
+where the error term $\epsilon$ is a catch-all for what we miss with this simple model. This error is independent of $X$. This equation is also the *population regression line* which is the best linear approximation to the true relationship between $X$ and $Y$. To illustrate between the *population regression line* and the *least squares line*, see below: 
+
+![](popregressionline.jpg) 
+
+* Left: 
+  + Red line is the population regression line 
+  + Blue line is the least squares line 
+    - the least squares estimate for $f(X)$ based on observed data 
+* Right: 
+  + Red and blue lines as in the left panel 
+  + Light blue lines are ten least square lines computed on the basis of a separate random set of observations 
+    - On average, the least squares lines are close to the population regression line 
+
+The least squares lines and the population regression line are different but close, just like the sample mean will be different from the population mean, but it will provide a good estimate. This estimation is *unbiased*, meaning that we expect sample mean to be close to population mean if we increase the number of observations. An *unbiased estimator* does not systematically over or under estimate the true parameter. 
 
 
 

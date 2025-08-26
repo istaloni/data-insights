@@ -394,6 +394,7 @@ window.Quarto = {
   <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link active" data-scroll-target="#simple-linear-regression">Simple Linear Regression</a>
   <ul class="collapse">
   <li><a href="#estimating-the-coefficients" id="toc-estimating-the-coefficients" class="nav-link" data-scroll-target="#estimating-the-coefficients">Estimating the Coefficients</a></li>
+  <li><a href="#assessing-the-accuracy-of-coefficients" id="toc-assessing-the-accuracy-of-coefficients" class="nav-link" data-scroll-target="#assessing-the-accuracy-of-coefficients">Assessing the Accuracy of Coefficients</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -544,6 +545,33 @@ Y \approx \beta_0 + \beta_1 X
 <p>The residual, <span class="math inline">\(e_i\)</span>, is <span class="math inline">\(e_i = y_i - \hat{y}_i\)</span>, which is the difference between the <span class="math inline">\(i\)</span>th observed response value and the <span class="math inline">\(i\)</span>th response value predicted by the linear model. The <em>residual sum of squares</em> (RSS) is then <span class="math display">\[
 RSS = e_1^2 + e_2^2 + \cdots + e_n^2
 \]</span> The figure above displays the linear regression fit to the <strong>Advertising</strong> data, where <span class="math inline">\(\beta_0\)</span> = 7.03 and <span class="math inline">\(\beta_1\)</span> = 0.0475. In simple words, an additional $1,000 spent on TV advertising is associated with selling approxiamtely 47.5 units of the product.</p>
+</section>
+<section id="assessing-the-accuracy-of-coefficients" class="level3">
+<h3 class="anchored" data-anchor-id="assessing-the-accuracy-of-coefficients">Assessing the Accuracy of Coefficients</h3>
+<p>The <em>true</em> relationship between <em>X</em> and <em>Y</em> is <span class="math display">\[
+Y = f(X) + \epsilon
+\]</span> If <span class="math inline">\(f(X)\)</span> is approximated to be linear, then the relationship is <span class="math display">\[
+Y = \beta_0 + \beta_1 X + \epsilon
+\]</span> where the error term <span class="math inline">\(\epsilon\)</span> is a catch-all for what we miss with this simple model. This error is independent of <span class="math inline">\(X\)</span>. This equation is also the <em>population regression line</em> which is the best linear approximation to the true relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. To illustrate between the <em>population regression line</em> and the <em>least squares line</em>, see below:</p>
+<p><img src="popregressionline.jpg" class="img-fluid"></p>
+<ul>
+<li>Left:
+<ul>
+<li>Red line is the population regression line</li>
+<li>Blue line is the least squares line
+<ul>
+<li>the least squares estimate for <span class="math inline">\(f(X)\)</span> based on observed data</li>
+</ul></li>
+</ul></li>
+<li>Right:
+<ul>
+<li>Red and blue lines as in the left panel</li>
+<li>Light blue lines are ten least square lines computed on the basis of a separate random set of observations
+<ul>
+<li>On average, the least squares lines are close to the population regression line</li>
+</ul></li>
+</ul></li>
+</ul>
 
 
 </section>
