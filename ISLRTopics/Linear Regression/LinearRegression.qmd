@@ -130,9 +130,17 @@ where the error term $\epsilon$ is a catch-all for what we miss with this simple
   + Light blue lines are ten least square lines computed on the basis of a separate random set of observations 
     - On average, the least squares lines are close to the population regression line 
 
-The least squares lines and the population regression line are different but close, just like the sample mean will be different from the population mean, but it will provide a good estimate. This estimation is *unbiased*, meaning that we expect sample mean to be close to population mean if we increase the number of observations. An *unbiased estimator* does not systematically over or under estimate the true parameter. 
+The least squares lines and the population regression line are different but close, just like the sample mean will be different from the population mean, but it will provide a good estimate. This estimation is *unbiased*.
 
+::: callout-important
+Unbiased estimation expects the least squares line (or sample mean) to be close to the population regression line (population mean) if we increase the number of observations. It does not systematically over or under estimate the true parameter.  
+:::
 
+The accuracy of a single estimate of a sample mean $\hat{\mu}$ to the population mean $\mu$ is given by computing the *standard error* of $\hat{\mu}$, given by: 
+$$
+\mathrm{Var}(\hat{\mu}) = \mathrm{SE}(\hat{\mu})^2 = \frac{\sigma^2}{n}
+$$
+where $\sigma$ is the standard deviation of each of the $Y_i$ of $Y^2$. It tells us the average amount the $\hat{\mu}$ differs from the actual $\mu$, and that as you increase $n$ the lower the standard error. 
 
 
 

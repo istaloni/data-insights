@@ -572,7 +572,23 @@ Y = \beta_0 + \beta_1 X + \epsilon
 </ul></li>
 </ul></li>
 </ul>
-<p>The least squares lines and the population regression line are different but close, just like the sample mean will be different from the population mean, but it will provide a good estimate. This estimation is <em>unbiased</em>, meaning that we expect sample mean to be close to population mean if we increase the number of observations. An <em>unbiased estimator</em> does not systematically over or under estimate the true parameter.</p>
+<p>The least squares lines and the population regression line are different but close, just like the sample mean will be different from the population mean, but it will provide a good estimate. This estimation is <em>unbiased</em>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unbiased estimation expects the least squares line (or sample mean) to be close to the population regression line (population mean) if we increase the number of observations. It does not systematically over or under estimate the true parameter.</p>
+</div>
+</div>
+<p>The accuracy of a single estimate of a sample mean <span class="math inline">\(\hat{\mu}\)</span> to the population mean <span class="math inline">\(\mu\)</span> is given by computing the <em>standard error</em> of <span class="math inline">\(\hat{\mu}\)</span>, given by: <span class="math display">\[
+\mathrm{Var}(\hat{\mu}) = \mathrm{SE}(\hat{\mu})^2 = \frac{\sigma^2}{n}
+\]</span> where <span class="math inline">\(\sigma\)</span> is the standard deviation of each of the <span class="math inline">\(Y_i\)</span> of <span class="math inline">\(Y^2\)</span>. It tells us the average amount the <span class="math inline">\(\hat{\mu}\)</span> differs from the actual <span class="math inline">\(\mu\)</span>, and that as you increase <span class="math inline">\(n\)</span> the lower the standard error.</p>
 
 
 </section>
