@@ -586,11 +586,21 @@ Important
 <p>Unbiased estimation expects the least squares line (or sample mean) to be close to the population regression line (population mean) if we increase the number of observations. It does not systematically over or under estimate the true parameter.</p>
 </div>
 </div>
+<section id="the-standard-error" class="level4">
+<h4 class="anchored" data-anchor-id="the-standard-error">The Standard Error</h4>
 <p>The accuracy of a single estimate of a sample mean <span class="math inline">\(\hat{\mu}\)</span> to the population mean <span class="math inline">\(\mu\)</span> is given by computing the <em>standard error</em> of <span class="math inline">\(\hat{\mu}\)</span>, given by: <span class="math display">\[
 \mathrm{Var}(\hat{\mu}) = \mathrm{SE}(\hat{\mu})^2 = \frac{\sigma^2}{n}
-\]</span> where <span class="math inline">\(\sigma\)</span> is the standard deviation of each of the <span class="math inline">\(Y_i\)</span> of <span class="math inline">\(Y^2\)</span>. It tells us the average amount the <span class="math inline">\(\hat{\mu}\)</span> differs from the actual <span class="math inline">\(\mu\)</span>, and that as you increase <span class="math inline">\(n\)</span> the lower the standard error.</p>
+\]</span> where <span class="math inline">\(\sigma\)</span> is the standard deviation of each of the <span class="math inline">\(Y_i\)</span> of <span class="math inline">\(Y^2\)</span>. It tells us the average amount the <span class="math inline">\(\hat{\mu}\)</span> differs from the actual <span class="math inline">\(\mu\)</span>, and that as you increase <span class="math inline">\(n\)</span> the lower the standard error. An equivalent standard error equation for the linear regression coefficient parameters are given by:</p>
+<p><span class="math display">\[
+\text{SE}(\hat{\beta}_0)^2 = \sigma^2 \left( \frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n (x_i - \bar{x})^2} \right)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\text{SE}(\hat{\beta}_1)^2 = \frac{\sigma^2}{\sum_{i=1}^n (x_i - \bar{x})^2}
+\]</span></p>
 
 
+</section>
 </section>
 </section>
 

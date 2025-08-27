@@ -3,6 +3,7 @@ title: "Linear Regression: Basics"
 description: "My take on machine learning based on statistics"
 author: "Karl Marquez"
 date: 2025-08-20
+date-modified: 2025-08-27
 categories:
   - machine learning
   - r
@@ -136,12 +137,29 @@ The least squares lines and the population regression line are different but clo
 Unbiased estimation expects the least squares line (or sample mean) to be close to the population regression line (population mean) if we increase the number of observations. It does not systematically over or under estimate the true parameter.  
 :::
 
+#### The Standard Error
+
 The accuracy of a single estimate of a sample mean $\hat{\mu}$ to the population mean $\mu$ is given by computing the *standard error* of $\hat{\mu}$, given by: 
 $$
 \mathrm{Var}(\hat{\mu}) = \mathrm{SE}(\hat{\mu})^2 = \frac{\sigma^2}{n}
 $$
-where $\sigma$ is the standard deviation of each of the $Y_i$ of $Y^2$. It tells us the average amount the $\hat{\mu}$ differs from the actual $\mu$, and that as you increase $n$ the lower the standard error. 
+where $\sigma$ is the standard deviation of each of the $Y_i$ of $Y^2$. It tells us the average amount the $\hat{\mu}$ differs from the actual $\mu$, and that as you increase $n$ the lower the standard error. An equivalent standard error equation for the linear regression coefficient parameters are given by: 
 
+$$
+\text{SE}(\hat{\beta}_0)^2 = \sigma^2 \left( \frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n (x_i - \bar{x})^2} \right)
+$$
+
+and
+
+$$
+\text{SE}(\hat{\beta}_1)^2 = \frac{\sigma^2}{\sum_{i=1}^n (x_i - \bar{x})^2}
+$$
+Some insights about these equations: 
+
+* $\sigma^2$ is Var($\epsilon$) 
+* Standard Error of $\hat{\beta}_1$ is smaller when $x_i$ are more spread out 
+  + we have more *leverage* to estimate the slope 
+* Standard Error of $\hat{\beta}_0$ would equal Standard Error of $\hat{\mu}$ if $\bar{x}$ is zero ($\hat{\beta}_0$ would be equal to $\bar{y}$)
 
 
 
