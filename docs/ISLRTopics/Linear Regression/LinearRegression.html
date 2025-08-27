@@ -436,6 +436,12 @@ window.Quarto = {
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 27, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -597,7 +603,15 @@ Important
 <p>and</p>
 <p><span class="math display">\[
 \text{SE}(\hat{\beta}_1)^2 = \frac{\sigma^2}{\sum_{i=1}^n (x_i - \bar{x})^2}
-\]</span></p>
+\]</span> Some insights about these equations:</p>
+<ul>
+<li><span class="math inline">\(\sigma^2\)</span> is Var(<span class="math inline">\(\epsilon\)</span>)</li>
+<li>Standard Error of <span class="math inline">\(\hat{\beta}_1\)</span> is smaller when <span class="math inline">\(x_i\)</span> are more spread out
+<ul>
+<li>we have more <em>leverage</em> to estimate the slope</li>
+</ul></li>
+<li>Standard Error of <span class="math inline">\(\hat{\beta}_0\)</span> would equal Standard Error of <span class="math inline">\(\hat{\mu}\)</span> if <span class="math inline">\(\bar{x}\)</span> is zero (<span class="math inline">\(\hat{\beta}_0\)</span> would be equal to <span class="math inline">\(\bar{y}\)</span>)</li>
+</ul>
 
 
 </section>
