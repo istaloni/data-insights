@@ -616,6 +616,23 @@ Important
 <li><span class="math inline">\(\text{RSE} = \sqrt{\frac{\text{RSS}}{n - 2}}\)</span></li>
 </ul></li>
 </ul>
+</section>
+<section id="confidence-intervals" class="level4">
+<h4 class="anchored" data-anchor-id="confidence-intervals">Confidence Intervals</h4>
+<ul>
+<li>Can be computed from standard error</li>
+<li>A 95% confidence interval is defined as a range of values such that with 95% probability the range will contain the true unknown value of the parameter
+<ul>
+<li>if we take repeated samples and construct the confidence interval for each sample, 95% of the intervals will contain the true unknown value of the parameter</li>
+</ul></li>
+<li>The range is the lower and upper limits computed from the sample data</li>
+</ul>
+<p>For linear regression, the 95% confidence interval for <span class="math inline">\(\beta_1\)</span> is <span class="math display">\[
+\hat{\beta}_1 \pm 2 \cdot SE(\hat{\beta}_1)
+\]</span></p>
+<p>For <span class="math inline">\(\beta_0\)</span>, the confidence interval is <span class="math display">\[
+\hat{\beta}_0 \pm 2 \cdot SE(\hat{\beta}_0)
+\]</span></p>
 
 
 </section>
