@@ -190,8 +190,18 @@ The most common hypothesis testing is testing the null hypothesis:
 * the *null hypothesis* $H_0$: There is no relationship between $X$ and $Y$ 
   + $H_0$: $\beta_1 = 0$
 * the *alternative hypothesis* $H_a$: There is some relationship between $X$ and $Y$ 
-  + $H_a$: $\beta_1 \ne 0$
+  + $H_a$: $\beta_1 \ne 0$ 
 
+If $\beta_1$ = 0, then equation $Y = \beta_0 + \beta_1 X + \epsilon$ reduces to $Y = \beta_0 + \epsilon$, where $X$ is now not associated with $Y$. Therefore, to test the null hypothesis, we need to determine whether $\hat{\beta}_1$ is far from zero. This depends on the SE($\hat{\beta}_1$). 
+
+* if SE($\hat{\beta}_1$) is small, small values of $\hat{\beta}_1$ may provide strong evidence that $\beta_1 \ne 0$ (there is a relationship between $X$ and $Y$) 
+* if SE($\hat{\beta}_1$) is large, then $\hat{\beta}_1$ must be large in absolute value to reject the null hypothesis 
+
+To test the null hypothesis, we compute the *t-statistic*, given by 
+$$
+t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
+$$
+This *t-statistic* measures the standard deviations that $\hat{\beta}_1$
 
 
 
