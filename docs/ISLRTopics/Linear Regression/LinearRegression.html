@@ -649,6 +649,14 @@ Important
 <li><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\beta_1 \ne 0\)</span></li>
 </ul></li>
 </ul>
+<p>If <span class="math inline">\(\beta_1\)</span> = 0, then equation <span class="math inline">\(Y = \beta_0 + \beta_1 X + \epsilon\)</span> reduces to <span class="math inline">\(Y = \beta_0 + \epsilon\)</span>, where <span class="math inline">\(X\)</span> is now not associated with <span class="math inline">\(Y\)</span>. Therefore, to test the null hypothesis, we need to determine whether <span class="math inline">\(\hat{\beta}_1\)</span> is far from zero. This depends on the SE(<span class="math inline">\(\hat{\beta}_1\)</span>).</p>
+<ul>
+<li>if SE(<span class="math inline">\(\hat{\beta}_1\)</span>) is small, small values of <span class="math inline">\(\hat{\beta}_1\)</span> may provide strong evidence that <span class="math inline">\(\beta_1 \ne 0\)</span> (there is a relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>)</li>
+<li>if SE(<span class="math inline">\(\hat{\beta}_1\)</span>) is large, then <span class="math inline">\(\hat{\beta}_1\)</span> must be large in absolute value to reject the null hypothesis</li>
+</ul>
+<p>To test the null hypothesis, we compute the <em>t-statistic</em>, given by <span class="math display">\[
+t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
+\]</span> This <em>t-statistic</em> measures the standard deviations that <span class="math inline">\(\hat{\beta}_1\)</span></p>
 
 
 </section>
