@@ -159,7 +159,32 @@ Some insights about these equations:
 * $\sigma^2$ is Var($\epsilon$) 
 * Standard Error of $\hat{\beta}_1$ is smaller when $x_i$ are more spread out 
   + we have more *leverage* to estimate the slope 
-* Standard Error of $\hat{\beta}_0$ would equal Standard Error of $\hat{\mu}$ if $\bar{x}$ is zero ($\hat{\beta}_0$ would be equal to $\bar{y}$)
+* Standard Error of $\hat{\beta}_0$ would equal Standard Error of $\hat{\mu}$ if $\bar{x}$ is zero ($\hat{\beta}_0$ would be equal to $\bar{y}$) 
+* The estimate of $\sigma$ is the *residual standard error* 
+  + $\text{RSE} = \sqrt{\frac{\text{RSS}}{n - 2}}$ 
+
+#### Confidence Intervals 
+
+* Can be computed from standard error
+* A 95% confidence interval is defined as a range of values such that with 95% probability the range will contain the true unknown value of the parameter 
+  + if we take repeated samples and construct the confidence interval for each sample, 95% of the intervals will contain the true unknown value of the parameter 
+* The range is the lower and upper limits computed from the sample data 
+
+For linear regression, the 95% confidence interval for $\beta_1$ is 
+$$
+\hat{\beta}_1 \pm 2 \cdot SE(\hat{\beta}_1)
+$$
+
+For $\beta_0$, the confidence interval is 
+$$
+\hat{\beta}_0 \pm 2 \cdot SE(\hat{\beta}_0)
+$$
+
+
+
+
+
+
 
 
 
