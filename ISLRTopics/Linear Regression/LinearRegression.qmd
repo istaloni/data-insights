@@ -201,8 +201,15 @@ To test the null hypothesis, we compute the *t-statistic*, given by
 $$
 t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
 $$
-This *t-statistic* measures the standard deviations that $\hat{\beta}_1$
+This *t-statistic* measures the standard deviations that $\hat{\beta}_1$ is away from 0. The *t*-distribution has a bell shape curve with *n* - 2 degrees of freedom, and for values of *n* greater than approximately 30 it is quite a similar to the standard deviation. 
 
+Using R, we can compute the probability of observing any value equal to $|t|$ or larger, the ***p-value***. 
+
+* small *p*-value 
+  + unlikely to observe such a substantial association between the predictor and response due to chance 
+  + there is an association between predictor and response 
+  + we reject the null hypothesis 
+  + typical cutoffs are 5% and 1% 
 
 
 
